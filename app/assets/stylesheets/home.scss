@@ -1,0 +1,50 @@
+.home-feature-bg {
+  text-align: center;
+  min-height: 100vh;
+  background: #136a8a;
+  background: -webkit-linear-gradient(to left, #136a8a, #267871);
+  background: linear-gradient(to left, #136a8a, #267871);
+
+  div {
+    padding-top: 37vh;
+  }
+
+  h1, h2 {
+    color: #fff;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 7vh;
+    margin-bottom: 2.5vh;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 3vh;
+    margin-bottom: 8vh;
+  }
+
+  button {
+    font-size: 1.5vh;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1.5px #fff solid;
+    transition: all .33s ease;
+
+    &:hover, &:active, &:focus {
+      background-color: #fff;
+      color: #136a8a;
+    }
+  }
+
+}
+
+.home-skills-bg {
+  z-index: 20;
+  background-color: #000;
+  position: relative;
+}
