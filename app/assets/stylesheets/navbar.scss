@@ -1,6 +1,6 @@
 nav.navbar {
-  background-color: #136a8a;
-  padding: 15px 0px;
+  padding: 30px 40px;
+  background-color: transparent;
   position: fixed;
   right: 0;
   left: 0;
@@ -8,9 +8,9 @@ nav.navbar {
   font-family: 'Montserrat', sans-serif;
   z-index: 10;
 
-  @media screen and (min-width: 768px) {
-    padding: 30px 40px;
-    background-color: transparent;
+  @media screen and (max-width: 768px) {
+    background-color: #136a8a;
+    padding: 15px 0px;
   }
 
   ul {
@@ -20,15 +20,13 @@ nav.navbar {
     padding: 0;
 
     li {
-      @media screen and (min-width: 768px) {
-        display: inline;
-        padding: 0;
-      }
+      display: inline;
+      padding: 0;
 
       a {
-        display: block;
         text-decoration: none;
-        padding: 15px 30vw;
+        display: inline;
+        padding: 20px 15px;
         color: #fff;
         font-size: 16px;
         font-weight: 300;
@@ -37,29 +35,31 @@ nav.navbar {
           color: #FF3363;
         }
 
-        @media screen and (min-width: 768px) {
-          padding: 20px 15px;
-          display: inline;
+        @media screen and (max-width: 768px) {
+          display: block;
+          padding: 15px 30vw;
         }
       }
     }
   }
 
   .title {
-    text-align: center;
+    text-align: left;
+    margin-bottom: 0px;
     margin-left: 15px;
-    margin-bottom: 20px;
     font-size: 20px;
 
-    @media screen and (min-width: 768px) {
-      text-align: left;
-      margin-bottom: 0px;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 20px;
     }
   }
 
   .navbar-right {
-    @media screen and (min-width: 768px) {
       float: right;
+
+    @media screen and (max-width: 768px) {
+      float: none;
     }
   }
 }
