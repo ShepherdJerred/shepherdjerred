@@ -34,13 +34,14 @@ public class Application extends Controller {
                     "contact@shepherdjerred.com",
                     "shepherdjerred@gmail.com",
                     "Contact submission",
-                    "From:" + form.get("email") + " Message: " + form.get("message"),
-                    "<html>" + "From: " + form.get("email") + "<br> Message: " + form.get("message") +  "</html>");
+                    "From:" + form.get("email") + " (" + form.get("name") + ") " + " Message: " + form.get("message"),
+                    "<html>" + "From: " + form.get("email") + "(" + form.get("name") + ")" + "<br> Message: " + form.get("message") +  "</html>");
         } catch (SparkPostException e) {
             e.printStackTrace();
         }
 
-        return ok(index.render());
+        session("email_sent", "true");
+        return redirect("/#contact");
 
     }
 
