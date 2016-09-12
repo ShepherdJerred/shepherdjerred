@@ -36,11 +36,11 @@ public class Application extends Controller {
                     "Contact submission",
                     "From:" + form.get("email") + " (" + form.get("name") + ") " + " Message: " + form.get("message"),
                     "<html>" + "From: " + form.get("email") + "(" + form.get("name") + ")" + "<br> Message: " + form.get("message") +  "</html>");
+            flash("email_sent", "true");
         } catch (SparkPostException e) {
             e.printStackTrace();
         }
 
-        flash("email_sent", "true");
         return redirect("/#contact");
 
     }
