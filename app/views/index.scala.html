@@ -111,7 +111,7 @@
                             <div class="pure-u-1-4"></div>
                             <div class="pure-u-1-2">
 
-                                @if(session().get("email_sent").equals("true")) {
+                                @if(flash().get("email_sent").equals("true")) {
                                     <h2>Email sent!</h2>
                                 }
 

@@ -40,7 +40,7 @@ public class Application extends Controller {
             e.printStackTrace();
         }
 
-        session("email_sent", "true");
+        flash("email_sent", "true");
         return redirect("/#contact");
 
     }
