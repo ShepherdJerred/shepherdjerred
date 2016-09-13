@@ -118,9 +118,10 @@
                             <div class="pure-u-1-2">
 
                                 @if(flash.containsKey("email")) {
-                                    <h2>@flash.get("email")</h2>
+                                    <h3>@flash.get("email")</h3>
                                 }
 
+                                <!-- TODO Do this using Ajax -->
                                 <form class="pure-form" action="/contact" method="post">
                                     <fieldset class="pure-group">
                                         <input type="text" name="name" class="pure-input-1" placeholder="Name">
