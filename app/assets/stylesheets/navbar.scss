@@ -49,13 +49,18 @@ nav.navbar {
     margin-left: 15px;
     font-size: 20px;
 
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
     @media screen and (max-width: 768px) {
       text-align: center;
       margin-bottom: 20px;
     }
   }
 
-  .hidden {
+  .collapsed {
     .title {
       margin-bottom: 0;
       margin-top: 15px;
