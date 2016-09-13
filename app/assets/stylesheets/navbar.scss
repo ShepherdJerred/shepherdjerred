@@ -55,8 +55,19 @@ nav.navbar {
     }
   }
 
+  .hidden {
+    .title {
+      margin-bottom: 0;
+      margin-top: 15px;
+    }
+
+    .navbar-right {
+      display: none;
+    }
+  }
+
   .navbar-right {
-      float: right;
+    float: right;
 
     @media screen and (max-width: 768px) {
       float: none;
