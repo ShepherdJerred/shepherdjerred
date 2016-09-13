@@ -3,6 +3,7 @@
 @import "navbar.scss";
 @import "footer.scss";
 @import "home.scss";
+@import "about.scss";
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
@@ -12,6 +13,10 @@ html, button, input, select, textarea,
 body {
   position: relative;
   z-index: 20;
+}
+
+.content {
+  min-height: calc(100vh - 124px);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,4 +39,23 @@ a:hover {
 ::selection {
   color: #fff;
   background-color: #000;
+}
+
+.page_header {
+  text-align: center;
+  min-height: 20vh;
+  background: #136a8a;
+  background: -webkit-linear-gradient(to left, #136a8a, #267871);
+  background: linear-gradient(to left, #136a8a, #267871);
+
+  div {
+    padding-top: 13vh;
+    padding-bottom: 11vh;
+  }
+
+  h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 7vh;
+  }
 }
