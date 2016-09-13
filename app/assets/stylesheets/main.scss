@@ -13,6 +13,9 @@ html, button, input, select, textarea,
 body {
   position: relative;
   z-index: 20;
+}
+
+.content {
   min-height: calc(100vh - 124px);
 }
 
