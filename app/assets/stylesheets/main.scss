@@ -59,3 +59,17 @@ a:hover {
     font-size: 7vh;
   }
 }
+
+.notice {
+
+  &.success {
+    background-color: #87D37C;
+    color: darken(#87D37C, 10%);
+    border-radius: 5px;
+    border: solid 1px darken(#87D37C, 15%);
+
+    h1 {
+      font-weight: 800;
+    }
+  }
+}

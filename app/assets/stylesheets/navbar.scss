@@ -21,7 +21,11 @@ nav.navbar {
       }
 
       .navbar-right {
-        display: none;
+
+      }
+
+      ul li {
+        opacity: 0;
       }
     }
   }
@@ -35,6 +39,7 @@ nav.navbar {
     li {
       display: inline;
       padding: 0;
+      opacity: 1;
 
       a {
         text-decoration: none;

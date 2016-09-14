@@ -5,9 +5,9 @@
         <div class="pure-u-1">
             <div class="home-feature-bg">
                 <div>
-                    <h1>Jerred Shepherd</h1>
-                    <h2>a developer</h2>
-                    <a href="#projects"><button class="pure-button">View my work</button></a>
+                    <h1 class="animated fadeIn">Jerred Shepherd</h1>
+                    <h2 class="animated fadeIn">a developer</h2>
+                    <a href="#projects" class="animated fadeIn"><button class="pure-button">View my work</button></a>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
                                     </span>
-                                    <h3>Java Development</h3>
+                                    <h3>Java</h3>
                                     <p>
                                         One and a half years of experience with Java and the Spigot API, two months experience with the Play Framework for Java web development
                                     </p>
@@ -95,10 +95,9 @@
                                         </div>
                                     </div>
                                     <div class="pure-u-1 all-projects">
-                                        <a href="https://github.com/shepherdjerred">
+                                        <a href="http://shepherdjerred.com/portfolio">
                                             <div>
-                                                <h3>View all of my projects on
-                                                    GitHub</h3>
+                                                <h3>View all of my Projects</h3>
                                             </div>
                                         </a>
                                     </div>
@@ -120,7 +119,9 @@
                             <div class="pure-u-md-1-2 pure-u-1">
 
                                 @if(flash.containsKey("email")) {
-                                    <h3>@flash.get("email")</h3>
+                                    <div class="notice success">
+                                        <h3>@flash.get("email")</h3>
+                                    </div>
                                 }
 
                                     <!-- TODO Do this using Ajax -->
