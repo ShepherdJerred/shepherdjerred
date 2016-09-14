@@ -38,6 +38,7 @@ public class Application extends Controller {
                     "<html>" + "From: " + form.get("email") + " (" + form.get("name") + ")" + "<br>Message: " + form.get("message") +  "</html>");
             flash("email", "Email sent!");
         } catch (SparkPostException e) {
+            flash("email", "Error sending email!");
             e.printStackTrace();
         }
 
