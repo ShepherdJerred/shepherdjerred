@@ -1,13 +1,12 @@
 package controllers;
 
-import play.*;
+import com.sparkpost.Client;
+import com.sparkpost.exception.SparkPostException;
+import play.data.DynamicForm;
+import play.data.Form;
 import play.mvc.*;
 
 import views.html.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Application extends Controller {
 
@@ -21,6 +20,29 @@ public class Application extends Controller {
 
     public static Result portfolio() {
         return ok(portfolio.render());
+    }
+
+    public static Result sendEmail() {
+
+        DynamicForm form = Form.form().bindFromRequest();
+
+        String API_KEY = System.getenv("SPARKPOST_API_KEY");
+        Client client = new Client(API_KEY);
+
+        try {
+            client.sendMessage(
+                    "contact@shepherdjerred.com",
+                    "shepherdjerred@gmail.com",
+                    "Contact submission",
+                    "From: " + form.get("email") + " (" + form.get("name") + ") " + " Message: " + form.get("message"),
+                    "<html>" + "From: " + form.get("email") + " (" + form.get("name") + ")" + "<br>Message: " + form.get("message") +  "</html>");
+            flash("email", "Email sent!");
+        } catch (SparkPostException e) {
+            e.printStackTrace();
+        }
+
+        return redirect("/#contact");
+
     }
 
 }

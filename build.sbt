@@ -8,6 +8,8 @@ scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq( javaJdbc ,  cache , javaWs )
 
+libraryDependencies += "com.sparkpost" % "sparkpost-lib" % "0.16.1"
+
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
 
-resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"  
+resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"

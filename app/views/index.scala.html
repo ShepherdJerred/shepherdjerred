@@ -94,6 +94,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="pure-u-1 all-projects">
+                                        <a href="https://github.com/shepherdjerred">
+                                            <div>
+                                                <h3>View all of my projects on
+                                                    GitHub</h3>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -110,16 +118,22 @@
                         <div class="pure-g">
                             <div class="pure-u-1-4"></div>
                             <div class="pure-u-1-2">
-                                <form class="pure-form">
+
+                                @if(flash.containsKey("email")) {
+                                    <h3>@flash.get("email")</h3>
+                                }
+
+                                    <!-- TODO Do this using Ajax -->
+                                <form class="pure-form" action="/contact" method="post">
                                     <fieldset class="pure-group">
-                                        <input type="text" class="pure-input-1" placeholder="Name">
-                                        <input type="email" class="pure-input-1" placeholder="Email">
+                                        <input type="text" name="name" class="pure-input-1" placeholder="Name">
+                                        <input type="email" name="email" class="pure-input-1" placeholder="Email">
                                     </fieldset>
 
-                                    <textarea class="pure-input-1" placeholder="Message"></textarea>
+                                    <textarea name="message" class="pure-input-1" placeholder="Message"></textarea>
 
                                     <div class="pure-u-1-4"></div>
-                                    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary" disabled>Send</button>
+                                    <input type="submit" class="pure-button pure-input-1-2 pure-button-primary" value="Send">
                                 </form>
                             </div>
                         </div>
