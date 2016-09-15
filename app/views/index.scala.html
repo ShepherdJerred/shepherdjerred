@@ -120,11 +120,11 @@
 
                                 @if(flash.containsKey("email")) {
                                     @if(flash.get("email").contains("Error")) {
-                                        <div class="notice success">
+                                        <div class="notice warning">
                                             <h3>@flash.get("email")</h3>
                                         </div>
                                     } else {
-                                        <div class="notice warning">
+                                        <div class="notice success">
                                             <h3>@flash.get("email")</h3>
                                         </div>
                                     }
