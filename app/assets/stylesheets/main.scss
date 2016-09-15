@@ -61,15 +61,16 @@ a:hover {
 }
 
 .notice {
+  border-radius: 5px;
+  padding: 20px;
+
+  h1 {
+    font-weight: 800;
+  }
 
   &.success {
     background-color: #87D37C;
-    color: darken(#87D37C, 10%);
-    border-radius: 5px;
-    border: solid 1px darken(#87D37C, 15%);
-
-    h1 {
-      font-weight: 800;
-    }
+    color: darken(#87D37C, 30%);
+    border: solid 1px darken(#87D37C, 25%);
   }
 }
