@@ -37,11 +37,10 @@ public class Application extends Controller {
             flash("emailError", "The name field cannot be empty");
         else if (message == null || message.isEmpty())
             flash("emailError", "The message field cannot be empty");
-
-        if (!EmailValidator.getInstance().isValid(email))
+        else if (!EmailValidator.getInstance().isValid(email))
             flash("emailError", "Email address is invalid, please try again");
 
-        if (!flash().containsKey("emailErorr")) {
+        if (!flash().containsKey("emailError")) {
             try {
                 Client client = new Client(System.getenv("SPARKPOST_API_KEY"));
 
