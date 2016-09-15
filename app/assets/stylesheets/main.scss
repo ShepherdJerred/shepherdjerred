@@ -64,14 +64,21 @@ a:hover {
   border-radius: 5px;
   padding: 10px 12px;
   margin-bottom: 15px;
+  border: solid 1px;
 
   h1 {
     font-weight: 800;
   }
 
   &.success {
-    background-color: #87D37C;
-    color: darken(#87D37C, 40%);
-    border: solid 1px darken(#87D37C, 25%);
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  &.warning {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
   }
 }
