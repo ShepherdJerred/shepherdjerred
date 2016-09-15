@@ -27,13 +27,13 @@ public class Application extends Controller {
 
         DynamicForm form = Form.form().bindFromRequest();
 
-        String email = form.get("email");
         String name = form.get("name");
+        String email = form.get("email");
         String message = form.get("message");
 
-        if (email == null || email.isEmpty())
+        if (name == null || name.isEmpty())
             flash("emailError", "The email field cannot be empty");
-        else if (name == null || name.isEmpty())
+        else if (email == null || email.isEmpty())
             flash("emailError", "The name field cannot be empty");
         else if (message == null || message.isEmpty())
             flash("emailError", "The message field cannot be empty");
