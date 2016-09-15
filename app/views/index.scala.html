@@ -118,16 +118,16 @@
                             <div class="pure-u-1-4"></div>
                             <div class="pure-u-md-1-2 pure-u-1">
 
-                                @if(flash.containsKey("email")) {
-                                    @if(flash.get("email").contains("Error")) {
-                                        <div class="notice warning">
-                                            <h3>@flash.get("email")</h3>
-                                        </div>
-                                    } else {
-                                        <div class="notice success">
-                                            <h3>@flash.get("email")</h3>
-                                        </div>
-                                    }
+                                @if(flash.containsKey("emailError")) {
+                                    <div class="notice warning">
+                                        <h3>@flash.get("emailError")</h3>
+                                    </div>
+                                }
+
+                                @if(flash.containsKey("emailSuccess")) {
+                                    <div class="notice success">
+                                        <h3>@flash.get("emailSuccess")</h3>
+                                    </div>
                                 }
 
                                     <!-- TODO Do this using Ajax -->

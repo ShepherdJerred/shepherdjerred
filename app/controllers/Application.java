@@ -27,36 +27,35 @@ public class Application extends Controller {
 
         DynamicForm form = Form.form().bindFromRequest();
 
-        String API_KEY = System.getenv("SPARKPOST_API_KEY");
-        Client client = new Client(API_KEY);
-
         String email = form.get("email");
         String name = form.get("name");
         String message = form.get("message");
 
-        if (email == null || email.isEmpty()) {
-            flash("email", "The email field cannot be empty");
-        } else if (name == null || name.isEmpty()) {
-            flash("email", "The name field cannot be empty");
-        } else if (message == null || message.isEmpty()) {
-            flash("email", "The message field cannot be empty");
-        }
+        if (email == null || email.isEmpty())
+            flash("emailError", "The email field cannot be empty");
+        else if (name == null || name.isEmpty())
+            flash("emailError", "The name field cannot be empty");
+        else if (message == null || message.isEmpty())
+            flash("emailError", "The message field cannot be empty");
 
-        if (!EmailValidator.getInstance().isValid(email)) {
-            flash("email", "Email address is invalid, please try again");
-        }
+        if (!EmailValidator.getInstance().isValid(email))
+            flash("emailError", "Email address is invalid, please try again");
 
-        try {
-            client.sendMessage(
-                    "contact@shepherdjerred.com",
-                    "shepherdjerred@gmail.com",
-                    "Contact submission",
-                    "From: " + email + " (" + name + ") " + " Message: " + message,
-                    "<html>" + "From: " + email + " (" + name + ")" + "<br>Message: " + message +  "</html>");
-            flash("email", "Your message has been sent");
-        } catch (SparkPostException e) {
-            flash("email", "Error sending message! Try again later or email me directly at shepherdjerred@gmail.com");
-            e.printStackTrace();
+        if (!flash().containsKey("emailErorr")) {
+            try {
+                Client client = new Client(System.getenv("SPARKPOST_API_KEY"));
+
+                client.sendMessage(
+                        "contact@shepherdjerred.com",
+                        "shepherdjerred@gmail.com",
+                        "Contact submission",
+                        "From: " + email + " (" + name + ") " + " Message: " + message,
+                        "<html>" + "From: " + email + " (" + name + ")" + "<br>Message: " + message + "</html>");
+                flash("emailSuccess", "Your message has been sent");
+            } catch (SparkPostException e) {
+                flash("emailError", "Error sending message! Try again later or email me directly at shepherdjerred@gmail.com");
+                e.printStackTrace();
+            }
         }
 
         return redirect("/#contact");
