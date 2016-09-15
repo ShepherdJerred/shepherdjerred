@@ -59,3 +59,26 @@ a:hover {
     font-size: 7vh;
   }
 }
+
+.notice {
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: solid 1px;
+
+  h3 {
+    font-weight: 500;
+  }
+
+  &.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  &.warning {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+}
