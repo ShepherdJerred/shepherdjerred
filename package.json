@@ -1,20 +1,29 @@
 {
-  "name": "shepherdjerred",
+  "name": "shepherdjerred-vue",
   "version": "1.0.0",
   "description": "My portfolio website",
   "author": "Jerred Shepherd",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "start": "node index.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "test": "npm run lint && npm run build",
+    "lint": "eslint --ext .js,.vue src",
+    "postinstall": "npm run build"
   },
   "dependencies": {
+    "css-loader": "^0.26.4",
+    "express": "^4.15.2",
+    "favicons-webpack-plugin": "0.0.7",
+    "font-awesome": "^4.7.0",
+    "purecss": "^0.6.2",
+    "sass-loader": "^6.0.3",
     "vue": "^2.2.2",
-    "vue-router": "^2.3.0"
-  },
-  "devDependencies": {
+    "vue-analytics": "^3.2.1",
+    "vue-resource": "^1.3.1",
+    "vue-router": "^2.3.0",
+    "webfontloader": "^1.6.27",
     "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -26,7 +35,6 @@
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.26.1",
     "eslint": "^3.14.1",
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.6.1",
@@ -34,13 +42,9 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
-    "eventsource-polyfill": "^0.9.6",
-    "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.10.0",
-    "friendly-errors-webpack-plugin": "^1.1.3",
     "html-webpack-plugin": "^2.28.0",
-    "http-proxy-middleware": "^0.17.3",
     "webpack-bundle-analyzer": "^2.2.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
@@ -53,9 +57,14 @@
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1",
+    "webpack-merge": "^2.6.1"
+  },
+  "devDependencies": {
+    "friendly-errors-webpack-plugin": "^1.1.3",
+    "eventsource-polyfill": "^0.9.6",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
-    "webpack-merge": "^2.6.1"
+    "http-proxy-middleware": "^0.17.3"
   },
   "engines": {
     "node": ">= 4.0.0",
