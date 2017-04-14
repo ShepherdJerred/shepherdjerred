@@ -19,6 +19,7 @@
 
 <style lang="scss" scoped>
   .home {
+    text-align: center;
 
     > .hero {
       height: 100vh;
