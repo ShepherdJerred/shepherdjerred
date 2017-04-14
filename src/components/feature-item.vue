@@ -92,6 +92,7 @@
       align-items: center;
 
       > .icon {
+        padding: 60px;
         color: #fff;
       }
     }
