@@ -29,8 +29,8 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: './src/assets/favicon.png',
       prefix: 'icons/[hash]/',
-      title: 'Siphon',
-      background: '#ebb113',
+      title: 'Jerred Shepherd',
+      background: '#360033',
       icons: {
         android: true,
         appleIcon: true,
