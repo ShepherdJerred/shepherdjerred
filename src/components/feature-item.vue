@@ -6,7 +6,9 @@
         <p class="description">{{ description }}</p>
         <a :href="buttonLink">
           <button class="button"
-                  :style="{ background: highlightColor }">{{ buttonText }}</button>
+                  :style="{ background: highlightColor }">{{ buttonText }}
+
+          </button>
         </a>
       </div>
     </div>
@@ -19,7 +21,12 @@
 </template>
 
 <script>
+  import Tag from '../components/tag.vue'
+
   export default {
+    components: {
+      Tag
+    },
     props: {
       title: {
         type: String,
@@ -31,7 +38,7 @@
       },
       buttonText: {
         type: String,
-        default: 'View'
+        default: 'Details'
       },
       buttonLink: {
         type: String,
@@ -59,6 +66,8 @@
     background-color: #fff;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .5);
+    position: relative;
 
     > .feature-content {
       text-align: center;
@@ -80,8 +89,14 @@
         > a .button {
           color: #fff;
           border: none;
-          padding: 10px 40px;
+          padding: 10px 50px;
           border-radius: 5px;
+
+          &.button {
+            font-size: 14px;
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+          }
         }
       }
     }
@@ -90,6 +105,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
 
       > .icon {
         padding: 60px;

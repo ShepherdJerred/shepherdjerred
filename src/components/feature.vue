@@ -2,8 +2,8 @@
   <div class="feature">
     <h1 class="title _center">{{ title }}</h1>
     <div class="pure-g">
-      <div class="pure-u-1-12 pure-u-md-1-5"></div>
-      <div class="pure-u-5-6 pure-u-md-3-5">
+      <div class="pure-u-1-12 pure-u-md-1-4"></div>
+      <div class="pure-u-5-6 pure-u-md-1-2">
         <div class="pure-g">
           <div class="pure-u-1">
             <feature-item title="Raspastat"
@@ -56,7 +56,7 @@
       padding: 10vh 0;
       color: #fff;
       font-family: 'Open Sans', sans-serif;
-      font-size: 2.5em;
+      font-size: 3em;
       font-weight: 400;
     }
 
