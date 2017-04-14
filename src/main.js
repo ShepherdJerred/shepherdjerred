@@ -16,7 +16,7 @@ Vue.use(VueResource)
 
 WebFont.load({
   google: {
-    families: ['Gentium Basic', 'Open Sans']
+    families: ['Gentium Basic', 'Open Sans', 'Montserrat']
   }
 })
 
