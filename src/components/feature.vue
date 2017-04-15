@@ -1,6 +1,6 @@
 <template>
   <div class="feature">
-    <h1 class="title _center">{{ title }}</h1>
+    <area-title :text="title"></area-title>
     <div class="pure-g">
       <div class="pure-u-1-12 pure-u-md-1-4"></div>
       <div class="pure-u-5-6 pure-u-md-1-2">
@@ -34,9 +34,11 @@
 </template>
 
 <script>
+  import AreaTitle from '../components/area-title.vue'
   import FeatureItem from '../components/feature-item.vue'
   export default {
     components: {
+      AreaTitle,
       FeatureItem
     },
     props: {
@@ -50,16 +52,6 @@
 
 <style lang="scss" scoped>
   .feature {
-
-    > .title {
-      margin: 0;
-      padding: 10vh 0;
-      color: #fff;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 3em;
-      font-weight: 400;
-    }
-
     .feature-item {
       margin-bottom: 80px;
     }
