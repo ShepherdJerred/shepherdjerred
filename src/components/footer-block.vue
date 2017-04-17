@@ -19,16 +19,21 @@
 
 <style lang="scss" scoped>
   $background: #282830;
+  $fontColor: #fff;
+
+  .footer {
+    text-align: center;
+  }
 
   .attribution {
     background-color: $background;
     padding: 40px 0;
-    color: #fff;
+    color: $fontColor;
     font-size: 14px;
     font-family: "Lato", sans-serif;
 
     > .footer-link {
-      color: #fff;
+      color: $fontColor;
       text-decoration: none;
     }
   }
@@ -37,7 +42,7 @@
     background-color: darken($background, 5%);
     padding: 20px 0;
     > .social-icon {
-      color: #fff;
+      color: $fontColor;
       text-decoration: none;
     }
   }

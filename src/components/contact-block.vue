@@ -1,27 +1,24 @@
 <template>
   <div class="contact">
     <area-title :text="title"></area-title>
-    <div class="pure-g">
-      <div class="pure-u-1-12 pure-u-md-3-8"></div>
-      <div class="form-container pure-u-5-6 pure-u-md-1-4">
-        <form class="form-inner pure-form"
-              method="POST"
-              action="/contact/">
-          <fieldset class="pure-group">
-            <input type="text" class="pure-input-1" placeholder="Name">
-            <input type="email" class="pure-input-1" placeholder="Email">
-          </fieldset>
+    <div class="form-container">
+      <form class="form-inner pure-form"
+            method="POST"
+            action="/contact/">
+        <fieldset class="pure-group">
+          <input type="text" class="pure-input-1" placeholder="Name">
+          <input type="email" class="pure-input-1" placeholder="Email">
+        </fieldset>
 
-          <fieldset class="pure-group">
-            <input type="text" class="pure-input-1" placeholder="Subject">
-            <textarea class="pure-input-1" placeholder="Message"></textarea>
-          </fieldset>
+        <fieldset class="pure-group">
+          <input type="text" class="pure-input-1" placeholder="Subject">
+          <textarea class="pure-input-1" placeholder="Message"></textarea>
+        </fieldset>
 
-          <vue-recaptcha :sitekey="recaptchaKey"></vue-recaptcha>
+        <vue-recaptcha :sitekey="recaptchaKey"></vue-recaptcha>
 
-          <button type="submit" class="pure-button pure-input-1 pure-button-primary">Send</button>
-        </form>
-      </div>
+        <button type="submit" class="pure-button pure-input-1 pure-button-primary">Send</button>
+      </form>
     </div>
   </div>
 </template>

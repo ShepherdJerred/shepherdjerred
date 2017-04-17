@@ -1,10 +1,15 @@
 <template>
   <div class="home">
     <hero-block title="Jerred Shepherd"
-          subtitle="a web developer"></hero-block>
-    <feature-block title="Projects"></feature-block>
+                subtitle="a web developer"></hero-block>
+    <div class="pure-g feature-container">
+      <div class="pure-u-1-12 pure-u-md-1-4"></div>
+      <div class="pure-u-5-6 pure-u-md-1-2">
+        <feature-block title="Projects" :items="featureItems"></feature-block>
+      </div>
+    </div>
     <!--<contact title="Get in touch"-->
-             <!--recaptchaKey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></contact>-->
+    <!--recaptchaKey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></contact>-->
     <footer-block></footer-block>
   </div>
 </template>
@@ -14,20 +19,24 @@
   import featureBlock from '../components/feature-block.vue'
   import contactBlock from '../components/contact-block.vue'
   import footerBlock from '../components/footer-block.vue'
+  import featureItems from '../featureItems'
   export default {
     components: {
       heroBlock,
       featureBlock,
       contactBlock,
       footerBlock
+    },
+    computed: {
+      featureItems: function () {
+        return featureItems.items
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
   .home {
-    text-align: center;
-
     > .hero {
       height: 100vh;
       background: #0b8793;
@@ -35,7 +44,7 @@
       background: linear-gradient(to top, #0b8793, #360033);
     }
 
-    > .feature {
+    .feature-container {
       min-height: 100vh;
       background: #0b8793;
     }

@@ -4,18 +4,18 @@
       <div class="content-inner">
         <h1 class="title">{{ title }}</h1>
         <p class="description">{{ description }}</p>
-        <a :href="buttonLink">
+        <a :href="link">
           <button class="button"
-                  :style="{ background: highlightColor }">{{ buttonText }}
+                  :style="{ background: color }">{{ buttonText }}
 
           </button>
         </a>
       </div>
     </div>
     <div class="feature-icon pure-u-1 pure-u-md-1-3"
-         :style="{ background: highlightColor }">
+         :style="{ background: color }">
       <i class="fa fa-fw fa-3x icon"
-         :class="iconClass"></i>
+         :class="'fa-' + icon"></i>
     </div>
   </div>
 </template>
@@ -36,15 +36,15 @@
         type: String,
         default: 'Details'
       },
-      buttonLink: {
+      link: {
         type: String,
         required: true
       },
-      highlightColor: {
+      color: {
         type: String,
         default: '#000'
       },
-      iconClass: {
+      icon: {
         type: String,
         required: true
       },

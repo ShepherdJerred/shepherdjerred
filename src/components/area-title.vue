@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">{{ text }}</h1>
+  <h1 class="area-title">{{ text }}</h1>
 </template>
 
 <script>
@@ -15,7 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .title {
+  .area-title {
+    text-align: center;
     margin: 0;
     padding: 10vh 0;
     color: #fff;
