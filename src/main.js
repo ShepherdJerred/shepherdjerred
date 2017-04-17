@@ -5,7 +5,7 @@ import WebFont from 'webfontloader'
 import router from './router'
 import './analytics'
 
-import App from './views/app.vue'
+import app from './views/app.vue'
 
 import 'purecss'
 import 'purecss/build/grids-responsive-min.css'
@@ -23,5 +23,5 @@ WebFont.load({
 /* eslint-disable no-new */
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(app)
 }).$mount('#app')

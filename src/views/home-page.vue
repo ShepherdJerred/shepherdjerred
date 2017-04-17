@@ -1,25 +1,25 @@
 <template>
   <div class="home">
-    <hero title="Jerred Shepherd"
-          subtitle="a web developer"></hero>
-    <feature title="Projects"></feature>
+    <hero-block title="Jerred Shepherd"
+          subtitle="a web developer"></hero-block>
+    <feature-block title="Projects"></feature-block>
     <!--<contact title="Get in touch"-->
              <!--recaptchaKey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></contact>-->
-    <site-footer></site-footer>
+    <footer-block></footer-block>
   </div>
 </template>
 
 <script>
-  import Hero from '../components/hero.vue'
-  import Feature from '../components/feature.vue'
-  import Contact from '../components/contact.vue'
-  import SiteFooter from '../components/site-footer.vue'
+  import heroBlock from '../components/hero-block.vue'
+  import featureBlock from '../components/feature-block.vue'
+  import contactBlock from '../components/contact-block.vue'
+  import footerBlock from '../components/footer-block.vue'
   export default {
     components: {
-      Hero,
-      Feature,
-      Contact,
-      SiteFooter
+      heroBlock,
+      featureBlock,
+      contactBlock,
+      footerBlock
     }
   }
 </script>

@@ -21,12 +21,8 @@
 </template>
 
 <script>
-  import Tag from '../components/tag.vue'
-
   export default {
-    components: {
-      Tag
-    },
+    name: 'FeatureItem',
     props: {
       title: {
         type: String,

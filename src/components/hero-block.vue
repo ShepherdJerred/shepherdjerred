@@ -7,6 +7,7 @@
 
 <script>
   export default {
+    name: 'HeroBlock',
     props: {
       title: {
         type: String,

@@ -27,12 +27,13 @@
 </template>
 
 <script>
-  import AreaTitle from './area-title.vue'
-  import VueRecaptcha from 'vue-recaptcha'
+  import areaTitle from './area-title.vue'
+  import vueRecaptcha from 'vue-recaptcha'
   export default {
+    name: 'ContactBlock',
     components: {
-      AreaTitle,
-      VueRecaptcha
+      areaTitle,
+      vueRecaptcha
     },
     props: {
       title: {

@@ -34,12 +34,13 @@
 </template>
 
 <script>
-  import AreaTitle from '../components/area-title.vue'
-  import FeatureItem from '../components/feature-item.vue'
+  import areaTitle from '../components/area-title.vue'
+  import featureItem from '../components/feature-item.vue'
   export default {
+    name: 'FeatureBlock',
     components: {
-      AreaTitle,
-      FeatureItem
+      areaTitle,
+      featureItem
     },
     props: {
       title: {
