@@ -87,6 +87,7 @@
           border: none;
           padding: 10px 50px;
           border-radius: 5px;
+          margin-top: 10px;
 
           &.button {
             font-size: 14px;
