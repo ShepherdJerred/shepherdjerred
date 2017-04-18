@@ -7,6 +7,7 @@
     <div class="social">
       <a href="https://twitter.com/ShepherdJerred" class="fa fa-fw fa-twitter social-icon"></a>
       <a href="https://github.com/ShepherdJerred" class="fa fa-fw fa-github social-icon"></a>
+      <a href="mailto:shepherdjerred@gmail.com" class="fa fa-fw fa-envelope social-icon"></a>
     </div>
   </footer>
 </template>
@@ -27,9 +28,9 @@
 
   .attribution {
     background-color: $background;
-    padding: 40px 0;
+    padding: 25px 0;
     color: $fontColor;
-    font-size: 14px;
+    font-size: 12px;
     font-family: "Lato", sans-serif;
 
     > .footer-link {
@@ -40,7 +41,7 @@
 
   .social {
     background-color: darken($background, 5%);
-    padding: 20px 0;
+    padding: 10px 0;
     > .social-icon {
       color: $fontColor;
       text-decoration: none;

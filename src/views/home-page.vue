@@ -8,8 +8,13 @@
         <feature-block title="Projects" :items="featureItems"></feature-block>
       </div>
     </div>
-    <!--<contact title="Get in touch"-->
-    <!--recaptchaKey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></contact>-->
+    <!--<div class="pure-g contact-container">-->
+      <!--<div class="pure-u-1-12 pure-u-md-3-8"></div>-->
+      <!--<div class="pure-u-5-6 pure-u-md-1-4">-->
+        <!--<contact-block title="Get in touch"-->
+                       <!--recaptchaKey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></contact-block>-->
+      <!--</div>-->
+    <!--</div>-->
     <footer-block></footer-block>
   </div>
 </template>
@@ -49,7 +54,7 @@
       background: #0b8793;
     }
 
-    > .contact {
+    > .contact-container {
       min-height: 100vh;
       background: #0b8793;
     }
