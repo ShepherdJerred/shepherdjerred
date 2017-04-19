@@ -1,26 +1,49 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const sg = require('sendgrid')('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')
+const sg = require('sendgrid')('process.env.SENDGRID_API_KEY')
 const helper = require('sendgrid').mail
+const validator = require('validator')
+const Recaptcha = require('recaptcha2')
 
 const port = process.env.PORT || 3000
 const app = express()
+
+const captcha = new Recaptcha({
+  siteKey: '6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU',
+  secretKey: 'process.env.RECAPTCHA_SECRET'
+})
 
 app.use(express.static('dist'))
 app.use(bodyParser.json())
 
 app.post('/contact', function (req, res) {
-  const to = new helper.Email('shepherdjerred@gmail.com')
-  let from = new helper.Email(req.body.email)
+  captcha.validateRequest(req)
+    .then(function () {
+      res.json({formSubmit: true})
+    })
+    .catch(function (errorCodes) {
+      res.json({formSubmit: false, errors: captcha.translateErrors(errorCodes)})
+      res.sendStatus(401)
+    })
+
   let subject = req.body.subject
-  let content = new helper.Content('text/plain', 'Name: ' + req.body.name + '\n' + req.body.content)
+  let content = req.body.content
+  let email = req.body.email
+  let name = req.body.name
+
+  if (!validator.isEmail(email) || validator.isEmpty(content)) {
+    res.sendStatus(400)
+    return
+  }
+
+  const to = new helper.Email('shepherdjerred@gmail.com')
+  const from = new helper.Email('contact@shepherdjerred.com')
+
+  content = new helper.Content('text/html', 'Name: ' + name + '<br>' +
+    'Email: ' + email + '<br>' +
+    'Message: ' + content)
 
   let mail = new helper.Mail(from, subject, to, content)
-
-  console.log(req.body.email)
-  console.log(req.body.subject)
-  console.log(req.body.content)
-  console.log(req.body.name)
 
   let request = sg.emptyRequest({
     method: 'POST',
@@ -30,11 +53,10 @@ app.post('/contact', function (req, res) {
 
   sg.API(request)
     .then(response => {
-      res.send(response.statusCode)
+      res.sendStatus(response.statusCode)
     })
     .catch(error => {
-      console.log(error.response.statusCode)
-      console.log(error.response.body)
+      res.sendStatus(error.response.statusCode)
     })
 })
 

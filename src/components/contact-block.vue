@@ -5,12 +5,8 @@
       <transition name="fade">
         <template v-if="showStatus">
           <div class="status">
-            <template v-if="statusSuccess">
-              <i class="fa fa-fw fa-check-circle fa-5x"></i>
-            </template>
-            <template v-else>
-              <i class="fa fa-fw fa-times-circle fa-5x"></i>
-            </template>
+            <i class="fa fa-fw fa-5x"
+               :class="statusIconClass"></i>
             <h1 class="message">{{ statusMessage }}</h1>
           </div>
         </template>
@@ -26,8 +22,7 @@
           <input type="email"
                  class="pure-input-1"
                  placeholder="Email"
-                 v-model="email"
-                 required>
+                 v-model="email">
         </fieldset>
 
         <fieldset class="pure-group">
@@ -38,8 +33,7 @@
 
           <textarea class="pure-input-1 message"
                     placeholder="Message"
-                    v-model="content"
-                    required></textarea>
+                    v-model="content"></textarea>
         </fieldset>
 
         <vue-recaptcha :sitekey="recaptchaKey"></vue-recaptcha>
@@ -69,8 +63,8 @@
         email: '',
         content: '',
         showStatus: false,
-        statusSuccess: null,
-        statusMessage: ''
+        statusMessage: '',
+        statusIconClass: 'fa-cog fa-spin'
       }
     },
     props: {
@@ -83,34 +77,42 @@
         required: true
       }
     },
+    computed: {
+      emailJson: function () {
+        return {
+          name: this.name,
+          email: this.email,
+          subject: this.subject,
+          content: this.content
+        }
+      }
+    },
     methods: {
       submit: function () {
-        var email = {}
-
-        email.name = this.name
-        email.subject = this.subject
-        email.email = this.email
-        email.content = this.content
-
-        this.$http.post('/contact', email).then(response => {
-          this.statusSuccess = true
+        this.$http.post('/contact', this.emailJson).then(response => {
           this.statusMessage = response.statusText
+          this.statusIconClass = 'fa-check-circle'
+          this.resetFormValues()
         }, response => {
-          this.statusSuccess = false
-          this.statusMessage = response.statusText
+          this.statusMessage = 'Error: ' + response.statusText
+          this.statusIconClass = 'fa-times-circle'
         })
-        this.resetForm()
         this.toggleStatus()
         setTimeout(this.toggleStatus, 3000)
+        this.resetStatus()
       },
       toggleStatus: function () {
         this.showStatus = !this.showStatus
       },
-      resetForm: function () {
+      resetFormValues: function () {
         this.name = ''
         this.subject = ''
         this.email = ''
         this.content = ''
+      },
+      resetStatus: function () {
+        this.statusMessage = ''
+        this.statusIconClass = 'fa-cog fa-spin'
       }
     }
   }
@@ -118,7 +120,7 @@
 
 <style lang="scss" scoped>
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
+    transition: opacity .25s
   }
 
   .fade-enter, .fade-leave-to {
