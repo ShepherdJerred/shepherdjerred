@@ -11,8 +11,7 @@
     <div class="pure-g contact-container">
       <div class="pure-u-1-12 pure-u-lg-3-8"></div>
       <div class="pure-u-5-6 pure-u-lg-1-4">
-        <contact-block title="Get in touch"
-                       recaptchaKey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></contact-block>
+        <contact-block title="Get in touch"></contact-block>
       </div>
     </div>
     <footer-block></footer-block>

@@ -36,7 +36,7 @@
                     v-model="content"></textarea>
         </fieldset>
 
-        <vue-recaptcha :sitekey="recaptchaKey"></vue-recaptcha>
+        <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></vue-recaptcha>
 
         <button type="button"
                 class="pure-button pure-input-1 submit"
@@ -71,10 +71,6 @@
       title: {
         type: String,
         default: 'Contact'
-      },
-      recaptchaKey: {
-        type: String,
-        required: true
       }
     },
     computed: {

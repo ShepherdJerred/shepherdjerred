@@ -53,6 +53,8 @@ app.post('/contact', function (req, res) {
         })
     })
     .catch(function (errorCodes) {
+      console.log(process.env.RECAPTCHA_SECRET)
+      console.log(process.env.SENDGRID_API_KEY)
       res.sendStatus(401)
     })
 })
