@@ -36,7 +36,8 @@
                     v-model="content"></textarea>
         </fieldset>
 
-        <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"></vue-recaptcha>
+        <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"
+                       @verify="verify"></vue-recaptcha>
 
         <button type="button"
                 class="pure-button pure-input-1 submit"
@@ -64,7 +65,8 @@
         content: '',
         showStatus: false,
         statusMessage: '',
-        statusIconClass: 'fa-cog fa-spin'
+        statusIconClass: 'fa-cog fa-spin',
+        recaptchaResponse: ''
       }
     },
     props: {
@@ -79,7 +81,8 @@
           name: this.name,
           email: this.email,
           subject: this.subject,
-          content: this.content
+          content: this.content,
+          'g-recaptcha-response': this.recaptchaResponse
         }
       }
     },
@@ -109,6 +112,9 @@
       resetStatus: function () {
         this.statusMessage = ''
         this.statusIconClass = 'fa-cog fa-spin'
+      },
+      verify: function (response) {
+        this.recaptchaResponse = response
       }
     }
   }
