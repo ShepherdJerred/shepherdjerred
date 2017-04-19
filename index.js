@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const sg = require('sendgrid')('process.env.SENDGRID_API_KEY')
+const sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
 const helper = require('sendgrid').mail
 const validator = require('validator')
 const Recaptcha = require('recaptcha2')
@@ -10,7 +10,7 @@ const app = express()
 
 const captcha = new Recaptcha({
   siteKey: '6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU',
-  secretKey: 'process.env.RECAPTCHA_SECRET'
+  secretKey: process.env.RECAPTCHA_SECRET
 })
 
 app.use(express.static('dist'))
