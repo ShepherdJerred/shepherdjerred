@@ -23,8 +23,9 @@
   import featureBlock from '../components/feature-block.vue'
   import contactBlock from '../components/contact-block.vue'
   import footerBlock from '../components/footer-block.vue'
-  import featureItems from '../featureItems'
+  import projects from '../projects'
   export default {
+    name: 'HomePage',
     components: {
       heroBlock,
       featureBlock,
@@ -33,7 +34,7 @@
     },
     computed: {
       featureItems: function () {
-        return featureItems.items
+        return projects.projects
       }
     }
   }

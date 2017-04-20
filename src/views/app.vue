@@ -9,6 +9,7 @@
   import notificationBlock from '../components/notification-block.vue'
 
   export default {
+    name: 'App',
     components: {
       notificationBlock
     }

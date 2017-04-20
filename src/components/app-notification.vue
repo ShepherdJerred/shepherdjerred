@@ -9,6 +9,7 @@
 
 <script>
   export default {
+    name: 'AppNotification',
     props: {
       title: {
         type: String,

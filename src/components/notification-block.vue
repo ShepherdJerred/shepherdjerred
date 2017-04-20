@@ -13,6 +13,7 @@
   import appNotification from '../components/app-notification.vue'
 
   export default {
+    name: 'NotificationBlock',
     components: {
       appNotification
     },

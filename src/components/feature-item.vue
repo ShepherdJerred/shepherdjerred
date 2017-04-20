@@ -4,12 +4,12 @@
       <div class="content-inner">
         <h1 class="title">{{ title }}</h1>
         <p class="description">{{ description }}</p>
-        <a :href="link">
+        <router-link :to="link">
           <button class="button"
                   :style="{ background: color }">{{ buttonText }}
 
           </button>
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="feature-icon pure-u-1 pure-u-md-1-3"

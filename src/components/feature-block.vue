@@ -1,13 +1,13 @@
 <template>
   <div class="feature">
     <area-title :text="title"></area-title>
-    <template v-for="item in items">
-      <feature-item :title="item.title"
-                    :description="item.description"
-                    :link="item.link"
-                    :icon="item.icon"
-                    :color="item.color"
-                    :reverse="item.reverse"></feature-item>
+    <template v-for="(value, key, index) in items">
+      <feature-item :title="value.title"
+                    :description="value.summary"
+                    :link="'project/' + key"
+                    :icon="value.icon"
+                    :color="value.color"
+                    :reverse="index % 2 === 1"></feature-item>
     </template>
   </div>
 </template>
@@ -27,7 +27,7 @@
         required: true
       },
       items: {
-        type: Array,
+        type: Object,
         required: true
       }
     }
