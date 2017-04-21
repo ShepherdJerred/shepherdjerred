@@ -25,10 +25,11 @@
       title: {
         type: String,
         required: true
-      },
-      items: {
-        type: Object,
-        required: true
+      }
+    },
+    computed: {
+      items: function () {
+        return this.$store.state.projects
       }
     }
   }

@@ -1,66 +1,105 @@
 <template>
-  <project-details :title="title" :summary="summary" :description="description" :tags="tags" :icon="icon" :links="links"
-                   :process="process" :color="color"></project-details>
+  <div class="project-details">
+    <hero-block :title="title" :subtitle="summary" :style="{ background: color}"></hero-block>
+    <div class="pure-g">
+      <div class="pure-u-1-5"></div>
+      <div class="pure-u-3-5">
+        <div class="pure-g">
+          <div class="pure-u-3-5">
+            <div class="description">
+              <h1>About</h1>
+              <p>
+                {{ description }}
+              </p>
+            </div>
+            <div class="process">
+              <h1>Process</h1>
+              <template v-for="(item, index) in process">
+                <h2>#{{ index }} {{ item.title }}</h2>
+                <p>
+                  {{ item.description }}
+                </p>
+              </template>
+            </div>
+          </div>
+          <div class="pure-u-2-5">
+            <div class="project-links">
+              <template v-for="link in links">
+                <a :href="link.link" class="link">
+                  <button class="pure-button button" :style="{ background: color }">{{ link.name }}</button>
+                </a>
+              </template>
+            </div>
+            <template v-for="tag in tags">
+              <item-tag :text="tag"></item-tag>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-  import projectDetails from '../components/project-details.vue'
-  import projects from '../projects'
+  import heroBlock from '../components/hero-block.vue'
+  import itemTag from '../components/item-tag.vue'
   export default {
+    name: 'ProjectDetails',
     components: {
-      projectDetails
+      heroBlock,
+      itemTag
     },
-    name: 'ProjectPage',
-    componenets: {
-      projectDetails
-    },
-    computed: {
-      projects: function () {
-        return projects.projects
+    props: {
+      title: {
+        type: String,
+        required: true
       },
-      routeName: function () {
-        return this.$route.params.project
+      summary: {
+        type: String
       },
-      title: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].title
-        }
+      description: {
+        type: String,
+        required: true
       },
-      summary: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].summary
-        }
+      tags: {
+        type: Array,
+        required: true
       },
-      description: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].description
-        }
+      icon: {
+        type: String,
+        required: true
       },
-      tags: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].tags
-        }
+      links: {
+        type: Array,
+        required: true
       },
-      icon: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].icon
-        }
+      process: {
+        type: Object
       },
-      links: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].links
-        }
-      },
-      process: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].process
-        }
-      },
-      color: function () {
-        if (Object.keys(this.projects).includes(this.routeName)) {
-          return this.projects[this.routeName].color
-        }
+      color: {
+        type: String,
+        default: '#fff'
       }
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .project-details {
+    > .hero {
+      height: 45vh;
+    }
+  }
+
+  .project-links {
+    .link {
+      text-decoration: none;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      color: #fff;
+    }
+  }
+</style>

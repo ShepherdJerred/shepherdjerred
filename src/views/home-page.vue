@@ -5,7 +5,7 @@
     <div class="pure-g feature-container">
       <div class="pure-u-1-12 pure-u-lg-1-4"></div>
       <div class="pure-u-5-6 pure-u-lg-1-2">
-        <feature-block title="Projects" :items="featureItems"></feature-block>
+        <feature-block title="Projects"></feature-block>
       </div>
     </div>
     <div class="pure-g contact-container">
@@ -21,7 +21,6 @@
   import heroBlock from '../components/hero-block.vue'
   import featureBlock from '../components/feature-block.vue'
   import contactBlock from '../components/contact-block.vue'
-  import projects from '../projects'
   export default {
     name: 'HomePage',
     components: {
@@ -31,7 +30,7 @@
     },
     computed: {
       featureItems: function () {
-        return projects.projects
+        return this.$store.projects
       }
     }
   }
