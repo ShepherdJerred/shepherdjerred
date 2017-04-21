@@ -14,7 +14,6 @@
         <contact-block title="Get in touch"></contact-block>
       </div>
     </div>
-    <footer-block></footer-block>
   </div>
 </template>
 
@@ -22,15 +21,13 @@
   import heroBlock from '../components/hero-block.vue'
   import featureBlock from '../components/feature-block.vue'
   import contactBlock from '../components/contact-block.vue'
-  import footerBlock from '../components/footer-block.vue'
   import projects from '../projects'
   export default {
     name: 'HomePage',
     components: {
       heroBlock,
       featureBlock,
-      contactBlock,
-      footerBlock
+      contactBlock
     },
     computed: {
       featureItems: function () {

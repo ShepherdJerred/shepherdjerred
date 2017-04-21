@@ -1,6 +1,6 @@
 <template>
   <project-details :title="title" :summary="summary" :description="description" :tags="tags" :icon="icon" :links="links"
-                   :process="process"></project-details>
+                   :process="process" :color="color"></project-details>
 </template>
 
 <script>
@@ -54,6 +54,11 @@
       process: function () {
         if (Object.keys(this.projects).includes(this.routeName)) {
           return this.projects[this.routeName].process
+        }
+      },
+      color: function () {
+        if (Object.keys(this.projects).includes(this.routeName)) {
+          return this.projects[this.routeName].color
         }
       }
     }

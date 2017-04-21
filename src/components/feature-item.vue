@@ -80,6 +80,7 @@
 
         > .description {
           font-family: "Open Sans", sans-serif;
+          margin: 10px 0;
         }
 
         > a .button {

@@ -9,6 +9,10 @@ export default {
     text: {
       type: String,
       required: true
+    },
+    color: {
+      type: String,
+      default: '#fff'
     }
   }
 }

@@ -2,16 +2,18 @@
   <div>
     <router-view></router-view>
     <!--<notification-block></notification-block>-->
+    <footer-block></footer-block>
   </div>
 </template>
 
 <script>
   import notificationBlock from '../components/notification-block.vue'
-
+  import footerBlock from '../components/footer-block.vue'
   export default {
     name: 'App',
     components: {
-      notificationBlock
+      notificationBlock,
+      footerBlock
     }
   }
 </script>
