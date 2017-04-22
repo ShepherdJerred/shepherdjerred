@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import store from './store'
 
 import homePage from './views/home-page.vue'
+import aboutPage from './views/about-page.vue'
 import projectPage from './views/project-page.vue'
 import notFoundPage from './views/notFound-page.vue'
 
@@ -15,6 +16,11 @@ export default new Router({
       name: 'Home',
       path: '/',
       component: homePage
+    },
+    {
+      name: 'About',
+      path: '/about',
+      component: aboutPage
     },
     {
       name: 'Project',
@@ -31,8 +37,8 @@ export default new Router({
         process: store.getters.loadProject(route.params.project).process
       }),
       beforeEnter: (to, from, next) => {
-        if (store.state.projects[to.params.project] === null) {
-          next('/not-found')
+        if (store.getters.loadProject(to.params.project) === null) {
+          next('/404')
         } else {
           next()
         }
@@ -40,11 +46,8 @@ export default new Router({
     },
     {
       name: 'Not Found',
-      path: '/not-found',
+      path: '/404',
       component: notFoundPage
     }
-  ],
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  }
+  ]
 })

@@ -6,7 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   getters: {
     loadProject: state => (id) => {
-      return state.projects[id]
+      if (state.projects[id] !== undefined) {
+        return state.projects[id]
+      } else {
+        return null
+      }
     }
   },
   state: {
