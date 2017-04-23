@@ -1,6 +1,6 @@
 <template>
   <div class="feature">
-    <area-title :text="title"></area-title>
+    <block-title :text="title"></block-title>
     <template v-for="(value, key, index) in items">
       <feature-item :title="value.title"
                     :description="value.summary"
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-  import areaTitle from '../components/area-title.vue'
+  import blockTitle from './block-title.vue'
   import featureItem from '../components/feature-item.vue'
   export default {
     name: 'FeatureBlock',
     components: {
-      areaTitle,
+      blockTitle,
       featureItem
     },
     props: {
@@ -37,8 +37,6 @@
 
 <style lang="scss" scoped>
   .feature {
-    > .feature-item {
-      margin-bottom: 80px;
-    }
+    margin-bottom: 80px;
   }
 </style>

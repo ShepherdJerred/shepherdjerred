@@ -1,20 +1,20 @@
 <template>
-  <div class="feature-item pure-g" :class="{ 'feature-reverse' : reverse }">
-    <div class="feature-content pure-u-1 pure-u-md-2-3">
-      <div class="content-inner">
-        <h1 class="title">{{ title }}</h1>
-        <p class="description">{{ description }}</p>
+  <div class="feature pure-g" :class="{ 'feature--reverse' : reverse }">
+    <div class="feature__contentHolder pure-u-1 pure-u-md-2-3">
+      <div class="feature__content">
+        <h1 class="feature__title">{{ title }}</h1>
+        <p class="feature__description">{{ description }}</p>
         <router-link :to="link">
-          <button class="button"
+          <button class="feature__button"
                   :style="{ background: color }">{{ buttonText }}
 
           </button>
         </router-link>
       </div>
     </div>
-    <div class="feature-icon pure-u-1 pure-u-md-1-3"
+    <div class="iconHolder pure-u-1 pure-u-md-1-3"
          :style="{ background: color }">
-      <i class="fa fa-fw fa-3x icon"
+      <i class="fa fa-fw fa-3x iconHolder__icon"
          :class="'fa-' + icon"></i>
     </div>
   </div>
@@ -57,62 +57,62 @@
 </script>
 
 <style lang="scss" scoped>
-  .feature-item {
+  .feature {
     display: flex;
     background-color: #fff;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .5);
     position: relative;
+  }
 
-    > .feature-content {
-      text-align: center;
+  .iconHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-      .content-inner {
-        padding: 60px;
+  .iconHolder__icon {
+    padding: 60px;
+    color: #fff;
+  }
 
-        > .title {
-          text-transform: uppercase;
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 700;
-          margin: 0;
-        }
+  .feature__contentHolder {
+    text-align: center;
+  }
 
-        > .description {
-          font-family: "Open Sans", sans-serif;
-          margin: 10px 0;
-        }
+  .feature__content {
+    padding: 60px;
+  }
 
-        > a .button {
-          color: #fff;
-          border: none;
-          padding: 10px 50px;
-          border-radius: 5px;
-          margin-top: 10px;
+  .feature__title {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0;
+  }
 
-          &.button {
-            font-size: 14px;
-            font-family: "Lato", sans-serif;
-            font-weight: 700;
-          }
-        }
-      }
-    }
+  .feature__description {
+    font-family: "Open Sans", sans-serif;
+    margin: 10px 0;
+  }
 
-    > .feature-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+  a .feature__button {
+    color: #fff;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 5px;
+    margin-top: 10px;
 
-      > .icon {
-        padding: 60px;
-        color: #fff;
-      }
+    &.feature__button {
+      font-size: 14px;
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
     }
   }
 
-  .feature-reverse {
+  .feature--reverse {
     flex-direction: row-reverse;
   }
 </style>

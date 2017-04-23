@@ -1,13 +1,13 @@
 <template>
   <footer class="footer">
-    <div class="attribution">
+    <div class="footer__attribution">
       <a href="http://shepherdjerred.com"
-         class="footer-link">Site created by Jerred Shepherd</a>
+         class="attribution__link">Site created by Jerred Shepherd</a>
     </div>
-    <div class="social">
-      <a href="https://twitter.com/ShepherdJerred" class="fa fa-fw fa-twitter social-icon"></a>
-      <a href="https://github.com/ShepherdJerred" class="fa fa-fw fa-github social-icon"></a>
-      <a href="mailto:shepherdjerred@gmail.com" class="fa fa-fw fa-envelope social-icon"></a>
+    <div class="footer__social">
+      <a href="https://twitter.com/ShepherdJerred" class="fa fa-fw fa-twitter social__icon"></a>
+      <a href="https://github.com/ShepherdJerred" class="fa fa-fw fa-github social__icon"></a>
+      <a href="mailto:shepherdjerred@gmail.com" class="fa fa-fw fa-envelope social__icon"></a>
     </div>
   </footer>
 </template>
@@ -26,25 +26,26 @@
     text-align: center;
   }
 
-  .attribution {
+  .footer__attribution {
     background-color: $background;
     padding: 25px 0;
     color: $fontColor;
     font-size: 12px;
     font-family: "Lato", sans-serif;
-
-    > .footer-link {
-      color: $fontColor;
-      text-decoration: none;
-    }
   }
 
-  .social {
+  .attribution__link {
+    color: $fontColor;
+    text-decoration: none;
+  }
+
+  .footer__social {
     background-color: darken($background, 5%);
     padding: 10px 0;
-    > .social-icon {
-      color: $fontColor;
-      text-decoration: none;
-    }
+  }
+
+  .social__icon {
+    color: $fontColor;
+    text-decoration: none;
   }
 </style>

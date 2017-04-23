@@ -1,13 +1,13 @@
 <template>
-  <div class="contact-block">
-    <area-title :text="title"></area-title>
-    <div class="contact-inner">
+  <div class="contact">
+    <block-title :text="title"></block-title>
+    <div class="contact__inner">
       <transition name="fade">
         <template v-if="showStatus">
           <div class="status">
             <i class="fa fa-fw fa-5x"
                :class="statusIconClass"></i>
-            <h1 class="message">{{ statusMessage }}</h1>
+            <h1 class="status__message">{{ statusMessage }}</h1>
           </div>
         </template>
       </transition>
@@ -31,7 +31,7 @@
                  placeholder="Subject"
                  v-model="subject">
 
-          <textarea class="pure-input-1 message"
+          <textarea class="pure-input-1 form__message"
                     placeholder="Message"
                     v-model="content"></textarea>
         </fieldset>
@@ -40,7 +40,7 @@
                        @verify="verify"></vue-recaptcha>
 
         <button type="button"
-                class="pure-button pure-input-1 submit"
+                class="pure-button pure-input-1 form__submit"
                 @click="submit">Send <i class="fa fa-fw fa-paper-plane"></i>
         </button>
       </form>
@@ -49,12 +49,12 @@
 </template>
 
 <script>
-  import areaTitle from './area-title.vue'
+  import blockTitle from './block-title.vue'
   import vueRecaptcha from 'vue-recaptcha'
   export default {
     name: 'ContactBlock',
     components: {
-      areaTitle,
+      blockTitle,
       vueRecaptcha
     },
     data: function () {
@@ -129,47 +129,42 @@
     opacity: 0
   }
 
-  .contact-block {
-    > .contact-inner {
-      background-color: #fff;
-      box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .5);
-      border-radius: 5px;
-      padding: 20px;
-      position: relative;
+  .contact__inner {
+    background-color: #fff;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+  }
 
-      > .status {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        background-color: #282830;
-        border-radius: 5px;
-        color: #fff;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  .status {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #282830;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-        > .message {
-          font-family: 'Lato', sans-serif;
-        }
-      }
+  .status__message {
+    font-family: 'Lato', sans-serif;
+  }
 
-      > .form {
+  .form__message {
+    min-height: 120px;
+  }
 
-        .message {
-          min-height: 120px;
-        }
-
-        .submit {
-          background-color: #282830;
-          color: #fff;
-          margin-top: 10px;
-        }
-      }
-    }
+  .form__submit {
+    background-color: #282830;
+    color: #fff;
+    margin-top: 10px;
   }
 </style>

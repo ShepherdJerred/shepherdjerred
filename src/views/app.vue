@@ -1,18 +1,15 @@
 <template>
   <div>
     <router-view></router-view>
-    <!--<notification-block></notification-block>-->
     <footer-block></footer-block>
   </div>
 </template>
 
 <script>
-  import notificationBlock from '../components/notification-block.vue'
   import footerBlock from '../components/footer-block.vue'
   export default {
     name: 'App',
     components: {
-      notificationBlock,
       footerBlock
     }
   }
@@ -27,5 +24,10 @@
   * {
     margin: 0;
     padding: 0;
+  }
+
+  html, button, input, select, textarea,
+  .pure-g [class *= "pure-u"] {
+    font-family: 'Open Sans', sans-serif;
   }
 </style>

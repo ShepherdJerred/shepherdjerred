@@ -1,5 +1,5 @@
 <template>
-  <div class="item-tag">
+  <div class="itemTag">
     {{ text }}
   </div>
 </template>
@@ -17,7 +17,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .item-tag {
+  .itemTag {
     display: inline-block;
     background-color: #aaa;
     padding: 5px;

@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
-    <h1 class="title">{{ title }}</h1>
-    <h2 class="subtitle">{{ subtitle }}</h2>
+    <h1 class="hero__title">{{ title }}</h1>
+    <h2 class="hero__subtitle">{{ subtitle }}</h2>
   </div>
 </template>
 
@@ -28,22 +28,22 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
 
-    > .title, .subtitle {
-      color: #fff;
-      font-family: 'Open Sans', sans-serif;
-    }
+  .hero__title, .hero__subtitle {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+  }
 
-    > .title {
-      margin: 0;
-      font-size: 3em;
-    }
+  .hero__title {
+    margin: 0;
+    font-size: 3em;
+  }
 
-    > .subtitle {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      font-size: 2.5em;
-      font-weight: 300;
-    }
+  .hero__subtitle {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
   }
 </style>
