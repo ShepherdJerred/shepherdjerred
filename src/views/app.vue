@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view></router-view>
+    <router-view class="appView"></router-view>
     <footer-block></footer-block>
   </div>
 </template>
@@ -16,6 +16,10 @@
 </script>
 
 <style lang="scss">
+  .appView {
+    min-height: calc(100vh - 103px);
+  }
+
   ::selection {
     color: #fff;
     background-color: lighten(#360033, 10%);

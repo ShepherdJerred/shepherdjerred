@@ -1,38 +1,49 @@
 <template>
-  <div class="project-details">
-    <hero-block :title="title" :subtitle="summary" :style="{ background: color}"></hero-block>
+  <div class="project">
+    <hero-block :title="title"
+                :subtitle="summary"
+                :style="{ background: color}"
+                class="project__hero"></hero-block>
     <div class="pure-g">
       <div class="pure-u-1-5"></div>
       <div class="pure-u-3-5">
         <div class="pure-g">
-          <div class="pure-u-3-5">
-            <div class="description">
-              <h1>About</h1>
+          <div class="pure-u-3-5 projectContent">
+            <h1 class="projectContent__title">About</h1>
+            <div class="project__description">
               <p>
                 {{ description }}
               </p>
             </div>
-            <div class="process">
-              <h1>Process</h1>
+
+            <h1 class="projectContent__title">Process</h1>
+            <div class="projectProcess">
               <template v-for="(item, index) in process">
-                <h2>#{{ index }} {{ item.title }}</h2>
+                <h2 class="projectProcess__title">#{{ index }} {{ item.title }}</h2>
                 <p>
                   {{ item.description }}
                 </p>
               </template>
             </div>
           </div>
-          <div class="pure-u-2-5">
-            <div class="project-links">
-              <template v-for="link in links">
-                <a :href="link.link" class="link">
-                  <button class="pure-button button" :style="{ background: color }">{{ link.name }}</button>
-                </a>
-              </template>
+
+          <div class="pure-u-2-5 projectSidebar">
+            <div class="projectSidebar__inner">
+              <div class="projectLinks">
+                <template v-for="link in links">
+                  <a :href="link.link" class="projectLinks_link">
+                    <button class="pure-button projectLinks_button" :style="{ background: color }">{{ link.name }}
+                    </button>
+                  </a>
+                </template>
+              </div>
+              <div class="projectTags">
+                <template v-for="tag in tags">
+                  <item-tag :text="tag"
+                            class="projectTags__tag"></item-tag>
+                </template>
+              </div>
             </div>
-            <template v-for="tag in tags">
-              <item-tag :text="tag"></item-tag>
-            </template>
           </div>
         </div>
       </div>
@@ -85,21 +96,41 @@
 </script>
 
 <style lang="scss" scoped>
-  .project-details {
-    > .hero {
-      height: 45vh;
-    }
+  .project__hero {
+    height: 45vh;
+    margin-bottom: 20px;
   }
 
-  .project-links {
-    .link {
-      text-decoration: none;
-    }
+  .projectContent {
+    margin-bottom: 20px;
+  }
 
-    .button {
-      display: block;
-      width: 100%;
-      color: #fff;
-    }
+  .projectContent__title {
+    margin: 0;
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+
+  .projectProcess__title {
+    margin: 15px 0 5px;
+  }
+
+  .projectSidebar__inner {
+    margin: 0 60px;
+  }
+
+  .projectLinks_link {
+    text-decoration: none;
+  }
+
+  .projectLinks_button {
+    display: block;
+    width: 100%;
+    color: #fff;
+    margin: 10px 0;
+  }
+
+  .projectTags__tag {
+    margin: 5px 5px;
   }
 </style>

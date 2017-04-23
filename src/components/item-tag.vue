@@ -19,7 +19,8 @@
 <style lang="scss" scoped>
   .itemTag {
     display: inline-block;
-    background-color: #aaa;
-    padding: 5px;
+    color: #fff;
+    background-color: darken(#6C7A89, 20%);
+    padding: 5px 10px;
   }
 </style>
