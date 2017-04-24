@@ -20,7 +20,8 @@ export default new Vuex.Store({
         summary: 'Create a smart thermostat with a Raspberry Pi',
         description: `Raspastat is a combination of two projects. raspastat-core is a Java application which runs on a
       Raspberry Pi. It interfaces with an AC unit and thermometer, and exposes an API through redis.
-      raspastat-web provides a web interface for the thermometer and REST API that interfaces with the core module through redis.`,
+      raspastat-web provides a web interface for the thermometer and REST API that interfaces with the core module through redis.
+      The inspiration of this project was to provide a way for my roommates to easily manage the temperature of our dorm.`,
         tags: [
           'Java',
           'redis',
@@ -41,23 +42,29 @@ export default new Vuex.Store({
         process: {
           1: {
             title: 'Interfacing with hardware',
-            description: ``
+            description: `With this being my first project using hardware features on a Raspberry Pi, there was a bit of
+            a learning curve. I used Pi4J in order to read from a thermometer and control the AC unit using GPIO pins. A
+            friend helped wire up the Pi to the AC unit.`
           },
           2: {
-            title: 'Writing core logic',
-            description: ``
+            title: 'Writing the core program',
+            description: `I started off by creating a main loop to poll the thermometer, with the AC unit activating as
+            needed. Next, I created a simple console interface so the program and hardware could be tested. After a few
+            bugs were fixed, I was able to create a simple API using publish/subscribe with redis.`
           },
           3: {
             title: 'Create a web interface and REST API',
-            description: ``
+            description: `The next step was to find an easier way to control the core program, which at this point was
+            working well. The obvious way to do this was with a website, considering my background with web development.
+            I used the Spark Framework to create a simple REST API, and to serve static files to view the status of the
+            raspastat, and interface with the API. After having some of the leg work done, I added React for the sake of
+            learning a new technology. Although I didn't entirely integrate React with the front end, it did help the site
+            be more dynamic.`
           },
           4: {
-            title: 'Deploying & testing',
-            description: ``
-          },
-          5: {
             title: 'Future plans',
-            description: ``
+            description: `I ran into an issue with the hardware of my dorms thermostat, and stopped development because of that.
+            I plan to continue working on this project next semester.`
           }
         }
       },
@@ -92,7 +99,8 @@ export default new Vuex.Store({
         process: {
           1: {
             title: 'Figuring out workflow',
-            description: ``
+            description: `I wanted a way to instantly see updates I made to components, rather than recompile a Java application
+            like I had to with The Button. I used Vue's built-in hot reloading.`
           },
           2: {
             title: 'Experimenting with Vue',

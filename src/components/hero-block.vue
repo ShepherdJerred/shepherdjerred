@@ -37,7 +37,7 @@
 
   .hero__title {
     margin: 0;
-    font-size: 3em;
+    font-size: 4em;
   }
 
   .hero__subtitle {

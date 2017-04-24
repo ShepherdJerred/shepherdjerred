@@ -97,7 +97,7 @@
 
 <style lang="scss" scoped>
   .project__hero {
-    height: 45vh;
+    height: 25vh;
     margin-bottom: 20px;
   }
 
@@ -106,9 +106,7 @@
   }
 
   .projectContent__title {
-    margin: 0;
-    margin-bottom: 5px;
-    margin-top: 20px;
+    margin: 20px 0 5px;
   }
 
   .projectProcess__title {
