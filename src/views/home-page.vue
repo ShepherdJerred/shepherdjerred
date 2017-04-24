@@ -51,7 +51,8 @@
   }
 
   .home__contact {
-    min-height: 100vh;
+    min-height: 50vh;
     background: #0b8793;
+    padding-bottom: 40px;
   }
 </style>

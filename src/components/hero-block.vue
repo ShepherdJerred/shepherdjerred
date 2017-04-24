@@ -37,13 +37,13 @@
 
   .hero__title {
     margin: 0;
-    font-size: 4em;
+    font-size: 7vh;
   }
 
   .hero__subtitle {
     margin: 0;
     font-family: 'Lato', sans-serif;
-    font-size: 2.5em;
+    font-size: 4vh;
     font-weight: 300;
   }
 </style>
