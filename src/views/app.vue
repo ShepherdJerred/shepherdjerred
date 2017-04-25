@@ -1,15 +1,18 @@
 <template>
   <div>
-    <router-view class="appView"></router-view>
+    <navbar-block></navbar-block>
+      <router-view class="appView"></router-view>
     <footer-block></footer-block>
   </div>
 </template>
 
 <script>
+  import navbarBlock from '../components/navbar-block.vue'
   import footerBlock from '../components/footer-block.vue'
   export default {
     name: 'App',
     components: {
+      navbarBlock,
       footerBlock
     }
   }
@@ -17,21 +20,16 @@
 
 <style lang="scss">
   .appView {
-    min-height: calc(100vh - 103px);
+    min-height: calc(100vh - 39px - 36px);
+    padding-top: 39px;
   }
 
   ::selection {
-    color: #fff;
-    background-color: lighten(#360033, 10%);
+    background-color: #214283;
   }
 
   * {
     margin: 0;
     padding: 0;
-  }
-
-  html, button, input, select, textarea,
-  .pure-g [class *= "pure-u"] {
-    font-family: 'Open Sans', sans-serif;
   }
 </style>

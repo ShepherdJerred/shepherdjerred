@@ -31,11 +31,11 @@ export default new Vuex.Store({
         icon: 'thermometer',
         links: [
           {
-            name: 'raspastat-core on GitHub',
+            name: 'Core on GitHub',
             link: 'https://github.com/shepherdjerred/raspastat-core'
           },
           {
-            name: 'raspastat-web on GitHub',
+            name: 'Web interface on GitHub',
             link: 'https://github.com/shepherdjerred/raspastat-web'
           }
         ],
@@ -84,11 +84,11 @@ export default new Vuex.Store({
         icon: 'university',
         links: [
           {
-            name: 'siphon-vue on GitHub',
+            name: 'Front-end on GitHub',
             link: 'https://github.com/shepherdjerred/siphon-vue'
           },
           {
-            name: 'siphon on GitHub',
+            name: 'Back-end on GitHub',
             link: 'https://github.com/shepherdjerred/siphon'
           },
           {

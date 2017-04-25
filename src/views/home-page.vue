@@ -1,58 +1,51 @@
 <template>
   <div class="home">
-    <hero-block title="Jerred Shepherd"
-                subtitle="a web developer"
-                class="home__hero"></hero-block>
-    <div class="pure-g home__feature">
-      <div class="pure-u-1-12 pure-u-lg-1-4"></div>
-      <div class="pure-u-5-6 pure-u-lg-1-2">
-        <feature-block title="Projects"></feature-block>
-      </div>
-    </div>
-    <div class="pure-g home__contact">
-      <div class="pure-u-1-12 pure-u-lg-3-8"></div>
-      <div class="pure-u-5-6 pure-u-lg-1-4">
-        <contact-block title="Get in touch"></contact-block>
-      </div>
+    <div class="home__text">
+      <h1 class="text__title">Jerred Shepherd</h1>
+      <p class="text__desc">
+        I'm a <span class="text__highlight">web</span> and <span class="text__highlight">Java</span> developer, but I try to learn new technologies when I have time.<br>
+        I make websites and small applications to help people out.<br>
+        This site showcases my projects and the processes behind them.
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-  import heroBlock from '../components/hero-block.vue'
-  import featureBlock from '../components/feature-block.vue'
-  import contactBlock from '../components/contact-block.vue'
   export default {
-    name: 'HomePage',
-    components: {
-      heroBlock,
-      featureBlock,
-      contactBlock
-    },
-    computed: {
-      featureItems: function () {
-        return this.$store.projects
-      }
-    }
+    name: 'HomePage'
   }
 </script>
 
 <style lang="scss" scoped>
-  .home__hero {
-    height: 100vh;
-    background: #0b8793;
-    background: -webkit-linear-gradient(to top, #0b8793, #360033);
-    background: linear-gradient(to top, #0b8793, #360033);
-  }
+  $background: #2B2B2B;
+  $fontColor: #A9B7C6;
+  $fontHightlight: #CC7832;
+  $fontFamily: 'Fira Code', 'Consolas', monospace;
 
-  .home__feature {
-    min-height: 100vh;
-    background: #0b8793;
-  }
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $fontColor;
+    background-color: $background;
 
-  .home__contact {
-    min-height: 50vh;
-    background: #0b8793;
-    padding-bottom: 40px;
+    .home__text {
+
+      .text__title {
+        margin: 0 0 10px;
+        font-family: $fontFamily;
+        line-height: 35px;
+      }
+
+      .text__desc {
+        font-family: $fontFamily;
+        line-height: 25px;
+      }
+
+      .text__highlight {
+        color: $fontHightlight
+      }
+    }
   }
 </style>

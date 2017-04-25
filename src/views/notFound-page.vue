@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <hero-block title="Error 404"
-                subtitle="Page not found"
-                class="error"></hero-block>
+  <div class="error">
+    <p class="error__text">
+      error 404: page not found
+    </p>
   </div>
 </template>
 
@@ -17,10 +17,20 @@
 </script>
 
 <style lang="scss" scoped>
+  $background: #2B2B2B;
+  $fontColor: #A9B7C6;
+  $fontHightlight: #CC7832;
+  $fontFamily: 'Fira Code', 'Consolas', monospace;
   .error {
-    height: calc(100vh - 103px);
-    background: #f85032;
-    background: -webkit-linear-gradient(to top, #e73827, #f85032);
-    background: linear-gradient(to top, #e73827, #f85032);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $fontColor;
+    background-color: $background;
+
+    .error__text {
+      font-size: 20px;
+      font-family: $fontFamily;
+    }
   }
 </style>

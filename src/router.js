@@ -4,8 +4,9 @@ import Router from 'vue-router'
 import store from './store'
 
 import homePage from './views/home-page.vue'
-import aboutPage from './views/about-page.vue'
 import projectPage from './views/project-page.vue'
+import projectsPage from './views/projects-page.vue'
+import contactPage from './views/contact-page.vue'
 import notFoundPage from './views/notFound-page.vue'
 
 Vue.use(Router)
@@ -18,13 +19,18 @@ export default new Router({
       component: homePage
     },
     {
-      name: 'About',
-      path: '/about',
-      component: aboutPage
+      name: 'Projects',
+      path: '/projects',
+      component: projectsPage
+    },
+    {
+      name: 'Contact',
+      path: '/contact',
+      component: contactPage
     },
     {
       name: 'Project',
-      path: '/project/:project',
+      path: '/projects/:project',
       component: projectPage,
       props: (route) => ({
         title: store.getters.loadProject(route.params.project).title,
@@ -46,7 +52,7 @@ export default new Router({
     },
     {
       name: 'Not Found',
-      path: '/404',
+      path: '*',
       component: notFoundPage
     }
   ]
