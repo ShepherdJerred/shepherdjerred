@@ -28,22 +28,22 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
 
-  .hero__title, .hero__subtitle {
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-  }
+    .hero__title, .hero__subtitle {
+      color: #fff;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-  .hero__title {
-    margin: 0;
-    font-size: 7vh;
-  }
+    .hero__title {
+      margin: 0;
+      font-size: 7vh;
+    }
 
-  .hero__subtitle {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-    font-size: 4vh;
-    font-weight: 300;
+    .hero__subtitle {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-size: 4vh;
+      font-weight: 300;
+    }
   }
 </style>

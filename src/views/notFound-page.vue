@@ -20,7 +20,7 @@
   $background: #2B2B2B;
   $fontColor: #A9B7C6;
   $fontHightlight: #CC7832;
-  $fontFamily: 'Fira Code', 'Consolas', monospace;
+  $fontFamily: 'Fira Mono', 'Consolas', monospace;
   .error {
     display: flex;
     justify-content: center;

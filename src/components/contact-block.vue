@@ -1,60 +1,53 @@
 <template>
   <div class="contact">
-    <block-title :text="title"></block-title>
-    <div class="contact__inner">
-      <transition name="fade">
-        <template v-if="showStatus">
-          <div class="status">
-            <i class="fa fa-fw fa-5x"
-               :class="statusIconClass"></i>
-            <h1 class="status__message">{{ statusMessage }}</h1>
-          </div>
-        </template>
-      </transition>
-      <form class="form pure-form">
+    <div class="pure-g">
+      <div class="pure-u-1-12 pure-u-md-10-24"></div>
+      <div class="pure-u-5-6 pure-u-md-1-6">
+        <div class="contact__inner">
+          <form class="form pure-form">
 
-        <fieldset class="pure-group">
-          <input type="text"
-                 class="pure-input-1"
-                 placeholder="Name"
-                 v-model="name">
+            <fieldset class="pure-group">
+              <input type="text"
+                     class="pure-input-1"
+                     placeholder="Name"
+                     v-model="name">
 
-          <input type="email"
-                 class="pure-input-1"
-                 placeholder="Email"
-                 v-model="email">
-        </fieldset>
+              <input type="email"
+                     class="pure-input-1"
+                     placeholder="Email"
+                     v-model="email">
+            </fieldset>
 
-        <fieldset class="pure-group">
-          <input type="text"
-                 class="pure-input-1"
-                 placeholder="Subject"
-                 v-model="subject">
+            <fieldset class="pure-group">
+              <input type="text"
+                     class="pure-input-1"
+                     placeholder="Subject"
+                     v-model="subject">
 
-          <textarea class="pure-input-1 form__message"
-                    placeholder="Message"
-                    v-model="content"></textarea>
-        </fieldset>
+              <textarea class="pure-input-1"
+                        placeholder="Message"
+                        v-model="content"></textarea>
+            </fieldset>
 
-        <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"
-                       @verify="verify"></vue-recaptcha>
+            <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"
+                           @verify="verify"></vue-recaptcha>
 
-        <button type="button"
-                class="pure-button pure-input-1 form__submit"
-                @click="submit">Send <i class="fa fa-fw fa-paper-plane"></i>
-        </button>
-      </form>
+            <button type="button"
+                    class="pure-button pure-input-1"
+                    @click="submit">Send <i class="fa fa-fw fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import blockTitle from './block-title.vue'
   import vueRecaptcha from 'vue-recaptcha'
   export default {
     name: 'ContactBlock',
     components: {
-      blockTitle,
       vueRecaptcha
     },
     data: function () {
@@ -121,50 +114,14 @@
 </script>
 
 <style lang="scss" scoped>
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .25s
-  }
 
-  .fade-enter, .fade-leave-to {
-    opacity: 0
-  }
+  $fontColor: #A9B7C6;
+  $fontHightlight: #CC7832;
+  $fontFamily: 'Fira Mono', 'Consolas', monospace;
 
-  .contact__inner {
-    background-color: #fff;
-    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .5);
-    border-radius: 5px;
-    padding: 20px;
-    position: relative;
-  }
+  .contact {
+    .contact__inner {
 
-  .status {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: #282830;
-    border-radius: 5px;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .status__message {
-    font-family: 'Lato', sans-serif;
-  }
-
-  .form__message {
-    min-height: 120px;
-  }
-
-  .form__submit {
-    background-color: #282830;
-    color: #fff;
-    margin-top: 10px;
+    }
   }
 </style>

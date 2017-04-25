@@ -30,8 +30,12 @@
       align-items: stretch;
       justify-content: flex-start;
 
+      @media screen and (max-width: 48em) {
+        justify-content: center;
+      }
+
       .navbar__item {
-        font-family: 'Fira Code', 'Consolas', sans-serif;
+        font-family: 'Fira Mono', 'Consolas', sans-serif;
         color: $fontColor;
         text-decoration: none;
         padding: 10px;

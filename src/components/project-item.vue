@@ -30,7 +30,7 @@
 </script>
 
 <style lang="scss" scoped>
-  $fontFamily: 'Fira Code', 'Consolas', monospace;
+  $fontFamily: 'Fira Mono', 'Consolas', monospace;
   $fontColor: #A9B7C6;
 
   .project {

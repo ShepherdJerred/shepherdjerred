@@ -3,9 +3,9 @@
     <div class="projects__inner">
       <h1 class="projects__title">Projects</h1>
       <div class="pure-g">
-        <div class="pure-u-1-4"></div>
+        <div class="pure-u-1-12 pure-u-md-1-4"></div>
 
-        <div class="pure-u-1-2">
+        <div class="pure-u-5-6 pure-u-md-1-2">
           <div class="projects__list">
             <template v-for="(value, key, index) in items">
               <project-item :title="value.title"
@@ -42,7 +42,7 @@
   $background: #2B2B2B;
   $fontColor: #A9B7C6;
   $fontHightlight: #CC7832;
-  $fontFamily: 'Fira Code', 'Consolas', monospace;
+  $fontFamily: 'Fira Mono', 'Consolas', monospace;
 
   .projects {
     background: $background;

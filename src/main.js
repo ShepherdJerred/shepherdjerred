@@ -20,7 +20,7 @@ sync(store, router)
 
 WebFont.load({
   google: {
-    families: ['Gentium Basic', 'Open Sans', 'Montserrat']
+    families: ['Fira Mono']
   }
 })
 
