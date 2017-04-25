@@ -107,16 +107,11 @@
   $fontFamily: 'Fira Mono', 'Consolas', monospace;
 
   .contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     .form {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      flex-basis: 0;
       .form__input {
         width: 284px;
         border: 0;

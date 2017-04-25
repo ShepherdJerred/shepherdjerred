@@ -184,7 +184,7 @@ export default new Vuex.Store({
           I would like to have the counter automatically reset once reaching it's limit, and to provide some sort of incentive
           for clicking the button, probably something basic such as unlocking new colors. As far as refactoring goes, it
           could definitely benefit from a minor rewrite. With this being my first Vue project, I made plenty of mistakes.
-          I also made a few bad choices when structuring the Java application.`
+          I also made a few bad choices when structuring the Java application.  `
           }
         }
       }

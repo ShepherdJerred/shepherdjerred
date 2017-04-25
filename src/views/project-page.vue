@@ -1,7 +1,7 @@
 <template>
   <div class="project">
-    <div class="pure-u-1-12"></div>
-    <div class="pure-u-5-6">
+    <div class="pure-u-1-6"></div>
+    <div class="pure-u-2-3">
       <div class="pure-g">
 
         <div class="pure-u-1 pure-u-md-4-5 project__content">
@@ -135,15 +135,16 @@
 
   .sidebar {
     .sidebar__inner {
-      margin: 0 10px 20px;
+      margin: 40px 10px;
       .sidebar__link {
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         display: block;
         padding: 10px 5px;
         width: 100%;
         color: #fff;
         text-decoration: none;
+        font-family: $fontFamily;
       }
     }
   }
