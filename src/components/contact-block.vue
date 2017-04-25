@@ -1,45 +1,32 @@
 <template>
   <div class="contact">
-    <div class="pure-g">
-      <div class="pure-u-1-12 pure-u-md-10-24"></div>
-      <div class="pure-u-5-6 pure-u-md-1-6">
-        <div class="contact__inner">
-          <form class="form pure-form">
+    <form class="form">
+      <input class="form__input"
+             type="text"
+             placeholder="Name"
+             v-model="name">
 
-            <fieldset class="pure-group">
-              <input type="text"
-                     class="pure-input-1"
-                     placeholder="Name"
-                     v-model="name">
+      <input class="form__input"
+             type="email"
+             placeholder="Email"
+             v-model="email">
+      <input class="form__input"
+             type="text"
+             placeholder="Subject"
+             v-model="subject">
 
-              <input type="email"
-                     class="pure-input-1"
-                     placeholder="Email"
-                     v-model="email">
-            </fieldset>
+      <textarea class="form__input form__message"
+                placeholder="Message"
+                v-model="content"></textarea>
 
-            <fieldset class="pure-group">
-              <input type="text"
-                     class="pure-input-1"
-                     placeholder="Subject"
-                     v-model="subject">
+      <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"
+                     @verify="verify"></vue-recaptcha>
 
-              <textarea class="pure-input-1"
-                        placeholder="Message"
-                        v-model="content"></textarea>
-            </fieldset>
-
-            <vue-recaptcha sitekey="6Lff6xsTAAAAAJz6DLCysZZw70vapFYaFhvhPLIU"
-                           @verify="verify"></vue-recaptcha>
-
-            <button type="button"
-                    class="pure-button pure-input-1"
-                    @click="submit">Send <i class="fa fa-fw fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+      <button type="button"
+              class="form__button"
+              @click="submit"><i class="fa fa-fw fa-paper-plane"></i>
+      </button>
+    </form>
   </div>
 </template>
 
@@ -114,14 +101,45 @@
 </script>
 
 <style lang="scss" scoped>
-
+  $background: #2B2B2B;
   $fontColor: #A9B7C6;
   $fontHightlight: #CC7832;
   $fontFamily: 'Fira Mono', 'Consolas', monospace;
 
   .contact {
-    .contact__inner {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-basis: 0;
+      .form__input {
+        width: 284px;
+        border: 0;
+        margin-bottom: 10px;
+        padding: 10px;
+        color: #fff;
+        font-family: $fontFamily;
+        background: lighten($background, 20%);
+        &::placeholder {
+          color: lighten($background, 40%);
+        }
+      }
+      .form__message {
+        height: 100px;
+      }
+      .form__button {
+        width: 304px;
+        padding: 10px 0;
+        background: darken($background, 5%);
+        border: none;
+        color: #fff;
+        margin-top: 20px;
+      }
     }
   }
 </style>

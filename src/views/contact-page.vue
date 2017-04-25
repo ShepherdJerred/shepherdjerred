@@ -1,7 +1,5 @@
 <template>
-  <div class="contact">
     <contact-block></contact-block>
-  </div>
 </template>
 
 <script>
