@@ -1,10 +1,10 @@
 <template>
   <div class="project">
-    <div class="pure-u-1-5"></div>
-    <div class="pure-u-3-5">
+    <div class="pure-u-1-12"></div>
+    <div class="pure-u-5-6">
       <div class="pure-g">
 
-        <div class="pure-u-4-5 project__content">
+        <div class="pure-u-1 pure-u-md-4-5 project__content">
           <div class="info">
             <h1 class="info__title">{{ title }}</h1>
             <p class="info__summary">
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="pure-u-1-5 sidebar">
+        <div class="pure-u-1 pure-u-md-1-5 sidebar">
           <div class="sidebar__inner">
             <template v-for="link in links">
               <a :href="link.link"
