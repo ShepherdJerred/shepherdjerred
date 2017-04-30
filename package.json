@@ -7,8 +7,9 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "node index.js",
-    "build": "gulp",
-    "test": ""
+    "build": "webpack",
+    "test": "",
+    "dev": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,15 @@
   "dependencies": {
     "express": "^4.15.2",
     "flexboxgrid": "^6.3.1",
-    "gulp": "^3.9.1",
-    "gulp-concat-css": "^2.3.0",
     "normalize.css": "^6.0.0"
   },
   "devDependencies": {
+    "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
-    "semistandard": "^11.0.0"
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "semistandard": "^11.0.0",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1"
   }
 }
