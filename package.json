@@ -7,9 +7,9 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "node index.js",
-    "build": "webpack",
+    "build": "webpack --config build/webpack-prod.config.js",
     "test": "",
-    "dev": "webpack --progress --colors --watch"
+    "dev": "webpack --config build/webpack-dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "sass-loader": "^6.0.3",
     "semistandard": "^11.0.0",
     "style-loader": "^0.16.1",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-hot-middleware": "^2.18.0"
   }
 }
