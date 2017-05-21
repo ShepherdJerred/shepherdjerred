@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './app.js',
@@ -11,23 +12,24 @@ module.exports = {
   module: {
     rules: [{
       test: /\.scss$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader'
-      }, {
-        loader: 'sass-loader'
-      }]
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'sass-loader']
+      })
     },
     {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader'
+      })
     }]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/html/index.html'
+      template: 'src/html/index.html',
+      inlineSource: '.(js|css)$',
     }),
     new FaviconsWebpackPlugin({
       logo: './src/img/favicon.png',
@@ -45,6 +47,7 @@ module.exports = {
         yandex: true,
         windows: true
       }
-    })
+    }),
+    new ExtractTextPlugin('styles.css')
   ]
 };
