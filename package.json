@@ -17,9 +17,7 @@
   },
   "homepage": "http://shepherdjerred.com",
   "dependencies": {
-    "express": "^4.15.2",
-    "flexboxgrid": "^6.3.1",
-    "normalize.css": "^6.0.0"
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",

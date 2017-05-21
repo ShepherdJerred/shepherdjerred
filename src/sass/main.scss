@@ -1,21 +1,13 @@
+@import "variables";
+@import "navbar";
+
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $body-font;
   margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
-}
-
-.navbar {
-  color: #fff;
-  background-color: #000;
-  display: flex;
-  width: 100%;
-
-  .navbar__link {
-    padding: 10px;
-  }
+  font-family: $title-font;
 }
 
 body {
