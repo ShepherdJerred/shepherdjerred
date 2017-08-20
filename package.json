@@ -9,7 +9,8 @@
     "start": "node build/server.js",
     "build": "webpack --config build/webpack.prod.conf.js",
     "test": "",
-    "dev": "webpack --config build/webpack.dev.conf.js --watch"
+    "dev": "webpack --config build/webpack.dev.conf.js --watch",
+    "heroku-postbuild": "webpack --config build/webpack.prod.conf.js --progress"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,5 @@
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4"
-  },
-  "heroku-postbuild": "webpack --config build/webpack.prod.conf.js --progress"
+  }
 }
