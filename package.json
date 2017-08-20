@@ -17,6 +17,7 @@
   },
   "homepage": "http://shepherdjerred.com",
   "dependencies": {
+    "bootstrap": "^4.0.0-beta",
     "bulma": "^0.5.0",
     "express": "^4.15.2"
   },
