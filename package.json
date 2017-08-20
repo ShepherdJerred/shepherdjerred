@@ -6,6 +6,7 @@
   "author": "Jerred Shepherd",
   "license": "GPL-3.0",
   "scripts": {
+    "heroku": "npm run build | npm run start",
     "start": "node build/server.js",
     "build": "webpack --config build/webpack.prod.conf.js",
     "test": "",
