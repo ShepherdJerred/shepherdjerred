@@ -40,5 +40,6 @@
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4"
-  }
+  },
+  "heroku-postbuild": "webpack --config build/webpack.prod.conf.js --progress"
 }
