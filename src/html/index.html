@@ -10,23 +10,22 @@
 
 <body>
 <div>
-    <div class="container">
-        <div class="jumbotron homeHeader">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
             <h1 class="display-3">Jerred Shepherd</h1>
             <p class="lead">Welcome to my portfolio website</p>
-            <p class="lead">
-                <a class="btn btn-primary" href="https://github.com/ShepherdJerred" role="button">GitHub</a>
-            </p>
         </div>
-        <h1 class="homeProjects__title">Featured Projects</h1>
+    </div>
+    <div class="container">
+        <h2 class="homeProjects__title">Featured Projects</h2>
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Funsheet</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Find things to do</h6>
-                        <a href="https://funsheet.herokuapp.com/#/ " class="card-link">Live site</a>
-                        <a href="https://github.com/ShepherdJerred/funsheet" class="card-link">GitHub</a>
+                        <p class="card-subtitle mb-2 text-muted">A user-driven web application to find things to do</p>
+                        <a href="https://funsheet.herokuapp.com/#/" class="btn btn-primary">Live site</a>
+                        <a href="https://github.com/ShepherdJerred/funsheet" class="btn btn-dark">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -34,9 +33,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Siphon</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Better interface for Harding's Pipeline</h6>
-                        <a href="http://www.hu-siphon.com/#/" class="card-link">Live site</a>
-                        <a href="https://github.com/ShepherdJerred/siphon-vue" class="card-link">GitHub</a>
+                        <p class="card-subtitle mb-2 text-muted">An easier to navigate interface for Harding University's Pipeline website</p>
+                        <a href="http://www.hu-siphon.com/#/" class="btn btn-primary">Live site</a>
+                        <a href="https://github.com/ShepherdJerred/siphon-vue" class="btn btn-dark">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -44,9 +43,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">The Button</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">A webapp made with Vue and Spark</h6>
-                        <a href="https://the-button-app.herokuapp.com/#/" class="card-link">Live site</a>
-                        <a href="https://github.com/ShepherdJerred/thebutton" class="card-link">GitHub</a>
+                        <p class="card-subtitle mb-2 text-muted">A very simple game made with Vue</p>
+                        <a href="https://the-button-app.herokuapp.com/#/" class="btn btn-primary">Live site</a>
+                        <a href="https://github.com/ShepherdJerred/thebutton" class="btn btn-dark">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -55,20 +54,14 @@
 </div>
 
 <script>
-  (function (b, o, i, l, e, r) {
-    b.GoogleAnalyticsObject = l;
-    b[l] || (b[l] =
-      function () {
-        (b[l].q = b[l].q || []).push(arguments)
-      });
-    b[l].l = +new Date;
-    e = o.createElement(i);
-    r = o.getElementsByTagName(i)[0];
-    e.src = 'https://www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e, r)
-  }(window, document, 'script', 'ga'));
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview')
+    window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-49467961-1', 'auto');
+    ga('send', 'pageview');
 </script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 </html>
