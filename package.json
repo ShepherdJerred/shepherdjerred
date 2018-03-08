@@ -2,7 +2,6 @@
   "name": "shepherdjerred",
   "version": "1.0.0",
   "description": "Portfolio website",
-  "main": "./build/webpack.prod.conf.js",
   "author": "Jerred Shepherd",
   "license": "GPL-3.0",
   "scripts": {

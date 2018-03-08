@@ -3,8 +3,9 @@ node_js:
 - node
 notifications:
   email: false
+script:
+  - npm run build
 before_deploy:
-  - ls
   - cd dist
 deploy:
   skip_cleanup: true
