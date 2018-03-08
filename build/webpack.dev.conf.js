@@ -1,6 +1,6 @@
-var merge = require('webpack-merge');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-var baseWebpackConfig = require('./webpack.base.conf');
+const merge = require('webpack-merge');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const baseWebpackConfig = require('./webpack.base.conf');
 
 module.exports = merge(baseWebpackConfig, {
   plugins: [
