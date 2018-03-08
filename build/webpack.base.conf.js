@@ -33,7 +33,7 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: './src/img/favicon.png',
-      prefix: 'icons-/',
+      prefix: 'icons/',
       background: '#663399',
       title: 'Jerred Shepherd',
       icons: {
