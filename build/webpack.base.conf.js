@@ -36,6 +36,7 @@ module.exports = {
       prefix: 'icons/',
       background: '#663399',
       title: 'Jerred Shepherd',
+      inject: true,
       icons: {
         android: true,
         appleIcon: true,
