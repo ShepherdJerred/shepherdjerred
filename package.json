@@ -6,10 +6,10 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "node build/server.js",
-    "build": "webpack --config build/webpack.prod.conf.js",
+    "build": "webpack --config build/webpack.prod.conf.js --progress",
     "test": "",
     "dev": "webpack --config build/webpack.dev.conf.js --watch",
-    "heroku-postbuild": "webpack --config build/webpack.prod.conf.js --progress"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
