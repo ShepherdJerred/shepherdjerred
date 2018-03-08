@@ -1,7 +1,24 @@
-.homeProjects__title{
-  margin-bottom: 30px;
+.intro {
+  //background: #663399;
 }
 
-.homeProjects__card {
-  margin-bottom: 20px;
+.intro__body {
+  padding: 6rem 1.5rem;
 }
+
+.intro__title {
+  //color: #fff;
+  font-size: 3rem;
+}
+
+.intro__subtitle {
+  //color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-top: .5rem !important;
+}
+
+.text--amazon {
+  color: #FF9900;
+}
+
