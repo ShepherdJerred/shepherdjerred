@@ -37,6 +37,8 @@ module.exports = {
       background: '#663399',
       title: 'Jerred Shepherd',
       inject: true,
+      cache: true,
+      publicPath: './',
       icons: {
         android: true,
         appleIcon: true,
