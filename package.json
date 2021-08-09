@@ -39,6 +39,6 @@
     "webpack-cli": "^4.7.2"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write"
   }
 }
