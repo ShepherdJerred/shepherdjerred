@@ -1,2 +1,2 @@
-import './../node_modules/bulma/bulma.sass';
-import './scss/main.scss';
+import "./../node_modules/bulma/bulma.sass";
+import "./scss/main.scss";
