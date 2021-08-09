@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: './src/app.js',
@@ -9,21 +10,27 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js'
   },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+    usedExports: true
+  },
   module: {
-    rules: [{
-      test: /\.s[c|a]ss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader']
-      })
-    },
-    {
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader'
-      })
-    }]
+    rules: [
+      {
+        test: /\.s[c|a]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader, "css-loader"
+        ]
+      },
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -52,6 +59,6 @@ module.exports = {
         windows: true
       }
     }),
-    new ExtractTextPlugin('styles.css')
+    new MiniCssExtractPlugin(),
   ]
 };
