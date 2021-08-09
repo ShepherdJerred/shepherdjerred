@@ -7,7 +7,8 @@
   "scripts": {
     "build": "webpack --config build/webpack.prod.conf.js --progress",
     "dev": "webpack --config build/webpack.dev.conf.js --watch",
-    "lint": "prettier --check ."
+    "lint": "prettier --check .",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,12 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
     "prettier": "2.3.2",
     "webpack-cli": "^4.7.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
