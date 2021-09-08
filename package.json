@@ -8,6 +8,7 @@
     "build": "webpack --config build/webpack.prod.conf.js --progress",
     "dev": "webpack --config build/webpack.dev.conf.js --watch",
     "lint": "prettier --check .",
+    "lint:fix": "prettier -w .",
     "prepare": "husky install"
   },
   "repository": {
