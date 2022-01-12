@@ -29,7 +29,7 @@
     "mini-css-extract-plugin": "^2.4.6",
     "sass": "^1.25.0",
     "sass-loader": "^12.4.0",
-    "style-loader": "^0.16.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.65.0",
     "webpack-merge": "^5.8.0"
   },
