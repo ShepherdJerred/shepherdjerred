@@ -41,5 +41,9 @@
   },
   "lint-staged": {
     "**/*": "prettier --write"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
   }
 }
