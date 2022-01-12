@@ -34,7 +34,7 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "husky": "^7.0.1",
+    "husky": "^7.0.4",
     "lint-staged": "^11.1.2",
     "prettier": "2.3.2",
     "webpack-cli": "^4.7.2"
