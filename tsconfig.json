@@ -1,9 +1,11 @@
 {
   "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
   "compilerOptions": {
-    "lib": ["dom", "esnext"],
+    "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "moduleResolution": "node"
+    "lib": ["dom"],
+    "noEmit": true,
+    "baseUrl": "./"
   },
-  "include": ["./src/**/*"]
+  "exclude": ["snowpack.config.js", "dist/"]
 }
