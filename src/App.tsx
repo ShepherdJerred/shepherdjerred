@@ -1,28 +1,19 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import "twin.macro";
+import tw from "twin.macro";
+import About from "./About";
+import Footer from "./Footer";
+import Hero from "./Hero";
+import Social from "./Social";
 
-const Input = () => <Input tw="border hover:border-black bg-black" />;
-
-function App() {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Update the count (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-          <Input />
-        </p>
-      </header>
-    </div>
+    <React.Fragment>
+      <div css={tw`h-screen`}>
+        <Hero />
+        <Social />
+        <About />
+        <Footer />
+      </div>
+    </React.Fragment>
   );
 }
-
-export default App;

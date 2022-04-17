@@ -1,5 +1,22 @@
+const colors = require("tailwindcss/colors");
+
+// eslint-disable-next-line no-undef
 module.exports = {
-  mode: "jit",
-  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
-  content: ["./src/**/*.{html,js,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        black: colors.black,
+        purple: colors.purple,
+        white: colors.white,
+        yellow: colors.yellow,
+        rstudio: "#75aadb",
+        pink: colors.pink,
+      },
+    },
+    fontFamily: {
+      display: "'Avenir Next'",
+      mono: "'Fira Code'",
+    },
+  },
+  plugins: [],
 };
