@@ -39,7 +39,7 @@ export default function Hero() {
         <Canvas>
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
-          <Polygon position={[0, 0, 0]} />
+          <Polygon />
         </Canvas>
       </div>
     </div>
